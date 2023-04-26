@@ -1,0 +1,135 @@
+@keyframes flicker-on {
+  0% { filter: brightness(0%);
+      text-shadow: none;
+      }
+  10% { filter: brightness(100%);
+    text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  20% { filter: brightness(0%);
+      text-shadow: none;
+      }
+  30% { filter: brightness(100%);
+    text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  40% { filter: brightness(0%);
+      text-shadow: none;
+      }
+  50% { filter: brightness(55%);
+        text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  60% { filter: brightness(0%);
+        text-shadow: none;
+      }
+  70% { filter: brightness(25%);
+        text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  80% { filter: brightness(75%);
+        text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  90% { filter: brightness(75%);
+        text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+  100% { filter: brightness(120%) saturate(200%);
+        text-shadow: 1px 1px 8px, -1px -1px 8px;
+      }
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  height: 100px;
+
+  .logo {
+    margin-top: 15px;
+    margin-left: 50px;
+    padding: 20px 10px;
+    column-gap: 10px;
+    display: grid; 
+    grid-auto-flow: column;
+    align-content: center;
+    justify-items: center;
+    font-size: 1.5em;
+    border: 5px solid rgb(25, 255, 171);
+    box-shadow: 4px 4px 15px rgb(25, 255, 171), 4px 4px 15px rgb(25, 255, 171) inset, -4px -4px 15px rgb(25, 255, 171) inset;
+    border-radius: 15px;
+    animation: flicker-on 500ms 500ms 1 forwards;
+
+    .do-logo {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      justify-self: end;
+      color: rgb(250, 242, 182);
+      animation: flicker-on 3000ms 500ms 1 forwards;
+    }
+    .what-logo {
+      grid-row-start: 1;
+      grid-column-start: 2;
+      color: rgb(250, 242, 182);
+      animation: flicker-on 1500ms 500ms 1 forwards;
+    }
+    .you-logo {
+      grid-row-start: 1;
+      grid-column-start: 3;
+      justify-self: start;
+      color: rgb(250, 242, 182);
+      animation: flicker-on 700ms 500ms 1 forwards;
+    }
+    .love-logo {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      color: rgb(255, 57, 156);
+      animation: flicker-on 6000ms 500ms 1 forwards;
+    }
+  
+  }
+  
+  .nav-item-container {
+    padding: 5px;
+    margin-top: 30px;
+    margin-right: 30px;
+    row-gap: 25px;
+    display: grid; 
+    grid-auto-flow: row;
+    align-content: center;
+    justify-items: center;
+    font-size: 1.5em;
+
+    .nav-item {
+      color: white;
+      text-decoration: underline 12px rgb(250, 242, 182);
+    }
+
+    #projects-nav {
+      color: hotpink;
+      text-shadow: 1px 1px 8px;
+      -webkit-text-stroke: 1px hotpink;
+    }
+    #about-me-nav {
+      color: rgb(79, 205, 255);
+      text-shadow: 1px 1px 8px;
+      -webkit-text-stroke: 1px rgb(79, 205, 255);
+    }
+    #contact-nav {
+      color: yellow;
+      text-shadow: 1px 1px 8px;
+      -webkit-text-stroke: 1px yellow;
+    }
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .nav-container{
+    .nav-item-container {
+      column-gap: 15px;
+      display: grid; 
+      grid-auto-flow: column;
+      align-content: center;
+      justify-items: center;
+      font-size: 1.5em;
+  }
+  }
+  
+}
