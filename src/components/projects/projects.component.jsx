@@ -9,17 +9,33 @@ import { useEffect } from 'react';
 function Projects() {
   const [projects, setProjects] = useState(['open', 'banana', 'youre-beautiful', 'banana', 'open', 'banana', 'open', 'open', 'youre-beautiful', 'banana', 'youre-beautiful']);
 
+  const targetOne = useRef(0);
+  const targetTwo = useRef(3)
+
   const [currentShowing, setCurrentShowing] = useState(projects.slice(0, 3));
+
+  const handleGoRight = () => {
+    const newTargetOne = targetOne.current++;
+    const newTargetTwo = targetTwo.current++;
+    setCurrentShowing(projects.slice(newTargetOne, newTargetTwo));
+  }
+
+  const handleGoLeft = () => {
+    const newTargetOne = targetOne.current--;
+    const newTargetTwo = targetTwo.current--;
+    setCurrentShowing(projects.slice(newTargetOne, newTargetTwo));
+  }
+
     
   return (
-    <div className="projects-container">
+    <div id='projects' className="projects-container">
       <div className='projects-wrapper'>
-      <h2 className='projects-header'>workshop</h2>
-      <button className="carousel-button  go-left-button">{`<`}</button>
+      <h2 className='projects-header'>projects</h2>
+      <button disabled={targetOne.current === 0} onClick={handleGoLeft} className="carousel-button  go-left-button">{`<`}</button>
       {currentShowing.map((value, index) => {
         switch (value) {
           case 'banana':
-            return <img key={index} src={Banana} className={`all-projects projects-${index}`} />;
+            return <img key={index} src={Banana} className={`all-projects projects-${index}`}/>;
             break;
           case 'open':
             return <img key={index} src={Open} className={`all-projects projects-${index}`} />;
@@ -29,7 +45,7 @@ function Projects() {
           default:'broke';
         }
       })}
-      <button className="carousel-button  go-right-button">{`>`}</button>
+      <button disabled={targetTwo.current === projects.length-1} onClick={handleGoRight} className="carousel-button  go-right-button">{`>`}</button>
       </div>
     </div>
   );

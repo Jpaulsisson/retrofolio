@@ -39,12 +39,18 @@
   justify-content: space-between;
   align-items: start;
   width: 100%;
-  height: 100px;
+  height: 12dvh;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba($color: black, $alpha: .7);
+  border-bottom: 3px solid rgba($color: black, $alpha: 1.0);
 
   .logo {
+    text-decoration: none;
     margin-top: 15px;
     margin-left: 50px;
     padding: 20px 10px;
+    height: 10dvh;
     column-gap: 10px;
     display: grid; 
     grid-auto-flow: column;
@@ -54,20 +60,24 @@
     border: 5px solid rgb(25, 255, 171);
     box-shadow: 4px 4px 15px rgb(25, 255, 171), 4px 4px 15px rgb(25, 255, 171) inset, -4px -4px 15px rgb(25, 255, 171) inset;
     border-radius: 15px;
-    animation: flicker-on 500ms 500ms 1 forwards;
+    animation: flicker-on 500ms 200ms 1 forwards;
 
     .do-logo {
       grid-row-start: 1;
       grid-column-start: 1;
       justify-self: end;
       color: rgb(250, 242, 182);
-      animation: flicker-on 3000ms 500ms 1 forwards;
+      animation: flicker-on 2000ms 500ms 1 forwards;
+      font-family: 'Cedarville Cursive', cursive;
+      font-size: 1.3em;
     }
     .what-logo {
       grid-row-start: 1;
       grid-column-start: 2;
       color: rgb(250, 242, 182);
       animation: flicker-on 1500ms 500ms 1 forwards;
+      font-family: 'Cedarville Cursive', cursive;
+      font-size: 1.3em;
     }
     .you-logo {
       grid-row-start: 1;
@@ -75,12 +85,15 @@
       justify-self: start;
       color: rgb(250, 242, 182);
       animation: flicker-on 700ms 500ms 1 forwards;
+      font-family: 'Cedarville Cursive', cursive;
+      font-size: 1.3em;
     }
     .love-logo {
       grid-row-start: 2;
       grid-column-start: 2;
       color: rgb(255, 57, 156);
-      animation: flicker-on 6000ms 500ms 1 forwards;
+      animation: flicker-on 4000ms 500ms 1 forwards;
+      margin-bottom: 10px;
     }
   
   }
@@ -95,10 +108,13 @@
     align-content: center;
     justify-items: center;
     font-size: 1.5em;
+    scroll-behavior: smooth;
 
     .nav-item {
       color: white;
-      text-decoration: underline 12px rgb(250, 242, 182);
+      border-bottom: 10px solid rgb(250, 242, 182);
+      padding-bottom: 2px;
+      text-decoration: none;
     }
 
     #projects-nav {
@@ -120,7 +136,7 @@
 }
 
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width <= 600px) {
   .nav-container{
     .nav-item-container {
       column-gap: 15px;

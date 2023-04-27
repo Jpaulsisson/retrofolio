@@ -1,17 +1,3 @@
-@keyframes rotateBlob {
-  0% { transform: rotate(30deg);}
-  10% { transform: rotate(60deg);}
-  20% { transform: rotate(90deg);}
-  30% { transform: rotate(120deg);}
-  40% { transform: rotate(150deg);}
-  50% { transform: rotate(180deg);}
-  60% { transform: rotate(210deg);}
-  70% { transform: rotate(240deg);}
-  80% { transform: rotate(270deg);}
-  90% { transform: rotate(300deg);}
-  100% { transform: rotate(330deg);}
-}
-
 @keyframes breathe {
   0% { border-radius: 10% 25% 35% 50%; }
   10% { border-radius: 20% 35% 50% 10%;}
@@ -34,49 +20,49 @@
   outline: 2px solid aqua;
   border-radius: 30px;
   background-color: rgba($color: rgb(170, 170, 170), $alpha: 1);
-  height: 95dvh;
-  width: 95dvw;
+  height: 75dvh;
+  width: 75dvw;
   position: relative;
   z-index: 1;
   box-shadow: 0 0 100px white, 0 0 100px black inset;
-  animation: breathe 60s linear 0s infinite alternate forwards;
-
+  animation: breathe 120s linear 0s infinite alternate forwards;
 
   .projects-wrapper {
-    animation: breathe 45s linear 0s infinite alternate forwards;
+    animation: breathe 90s linear 0s infinite alternate forwards;
     display: grid;
     grid-auto-flow: column;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 5fr;
     justify-content: center;
     align-items: center;
     height: 65dvh;
-    width: 90dvw;
+    width: 60dvw;
     background-color: rgba($color: rgb(9, 214, 255), $alpha: 1);
     z-index: -5;
     column-gap: 15px;
-    // border: white dashed 20px;
 
     .projects-header {
+      margin-block: auto;
       color: white;
       grid-column: 2 / span 9;
       height: 50px;
-      width: 80dvw;
+      width: 100%;
       text-align: center;
       font-size: 2.25em;
-      text-decoration: underline rgb(141, 141, 141);
-      text-shadow: 0 0 10px rgba($color: black, $alpha: 1);
+      text-decoration: 7px underline rgb(250, 242, 182);
+      text-shadow: 0 0 3px rgba($color: black, $alpha: 1);
     }
 
     .projects-header::first-letter {
-      text-decoration: underline white 5px;
-      color: white;
+      text-decoration: underline white 7px;
+      color: hotpink;
     }
 
     .all-projects {
+      margin-block: auto;
       border-radius: 50px;
       border: 4px solid white;
       outline: 3px solid aqua;
-      height: 50dvh;
+      height: 40dvh;
       background-color: rgba($color: #000000, $alpha: 0.8);
       aspect-ratio: 1 / 1;
       box-shadow: 0 0 50px white, 0 0 100px black inset;
@@ -119,6 +105,10 @@
     filter: brightness(200%);
   }
 
+  .carousel-button:disabled {
+    filter: blur(5px);
+  }
+
   .go-left-button {
     background-color: rgba($color: black, $alpha: .15);
     grid-column: 1 / 2;
@@ -138,22 +128,22 @@
     justify-items: end;
     content: ' ';
     height: 65dvh;
-    width: 85dvw;
+    width: 65dvw;
     transform: rotate(-5deg);
     background-color: rgba($color: yellow, $alpha: .5);
     z-index: -5;
-    animation: breathe 15s linear 0s infinite alternate forwards;
+    animation: breathe 30s linear 0s infinite alternate forwards;
   }
   .projects-wrapper::after {
     align-self: end;
     content: ' ';
     height: 65dvh;
-    width: 80dvw;
+    width: 60dvw;
     background-color: rgba($color: hotpink, $alpha: .5);
     position: absolute;
     transform: rotate(4deg);
     z-index: -5;
-    animation: breathe 30s linear 0s infinite alternate forwards;
+    animation: breathe 45s linear 0s infinite alternate forwards;
   }
 
   

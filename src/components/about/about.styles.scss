@@ -1,0 +1,115 @@
+@keyframes rotate {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(90deg);}
+  50% { transform: rotate(180deg);}
+  75% { transform: rotate(270deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes flicker {
+  0% { filter: brightness(30%) }
+  5% { filter: brightness(100%)}
+  10% { filter: brightness(30%)}
+  15% { filter: brightness(100%)}
+  20% { filter:brightness(30%) }
+  70% { filter:brightness(110%) }
+  100% { filter:brightness(120%) }
+}
+
+.about-container {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 90dvw;
+  color: white;
+
+  .arrows-transition {
+    position: relative;
+    display: flex;
+    background-color: rgba($color: hsl(0, 0%, 0%), $alpha: 1);
+
+
+    .arrow-1 {
+      height: 15dvh;
+      filter: hue-rotate(90deg);
+      transform: rotateY(180deg);
+    }
+    .arrow-2 {
+      height: 10dvh;
+      filter: hue-rotate(0deg);
+    }
+    .arrow-3 {
+      height: 20dvh;
+      filter: hue-rotate(45deg);
+    }
+    .arrow-4 {
+      height: 15dvh;
+      filter: hue-rotate(300deg);
+      transform: rotateY(180deg);
+    }
+  }
+
+  .about-header {
+    margin-top: auto;
+    color: white;
+    grid-column: 2 / span 9;
+    height: 50px;
+    width: 80dvw;
+    text-align: center;
+    font-size: 2.25em;
+    text-decoration: 7px underline rgb(250, 242, 182);
+    text-shadow: 0 0 3px rgba($color: black, $alpha: 1);
+  }
+
+  .about-header span {
+    text-decoration: underline white 7px;
+    color: rgb(9, 214, 255);
+    font-size: 2em;
+    text-shadow: 0 0 8px rgb(9, 214, 255);
+  }
+
+  .img-p-container {
+    display: flex;
+    height: 60dvh;
+    width: 90dvw;
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      list-style-type: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-inline: 10px;
+      height: inherit;
+      width: 33%;
+      filter: contrast(130%);
+    }
+
+    img {
+      border-radius: 50%;
+      padding: 20px;
+      height: 33dvh;
+      aspect-ratio: 1 / 1;
+      margin-right: 20px;
+      outline: 5px double goldenrod;
+      box-shadow: inset 0 0 20px white, 0 0 30px goldenrod;
+      border: 5px double white;
+  }
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  
+}
