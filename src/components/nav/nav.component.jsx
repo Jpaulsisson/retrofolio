@@ -5,7 +5,7 @@ import '../nav/nav.styles.scss';
 function Nav() {
   return (
     <nav className="nav-container">
-        <a href='#root' className="logo">
+        <a href='#root' className="logo-container">
           <span className="do-logo">do</span>{' '}
           <span className="what-logo">what</span>{' '}
           <span className="you-logo">you</span>{' '}

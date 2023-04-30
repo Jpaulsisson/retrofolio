@@ -1,0 +1,31 @@
+//colors
+$primaryBlue: rgb(79, 205, 255);
+$primaryYellow: yellow;
+$primaryPink: hotpink;
+$accentNeutral: rgb(250, 242, 182);
+$accentAqua: rgb(25, 255, 171);
+
+//font-sizes
+$fsXL: 5em;
+$fsL: 3em;
+$fsM: 1.5em;
+$fsS: 1em;
+
+//image-sizes
+$imgXL: 70dvw;
+$imgL: 50dvw;
+$imgM: 30dvw;
+$imgS: 10dvw;
+
+//button-sizes
+$bigBtnH: 11dvh;
+$mediumBtnH: 7dvh;
+$smallBtnH: 5dvh;
+
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

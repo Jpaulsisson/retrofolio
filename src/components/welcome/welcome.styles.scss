@@ -1,3 +1,5 @@
+@import '../../resources/variables';
+
 @keyframes flicker {
   0% { filter: brightness(30%) }
   5% { filter: brightness(100%)}
@@ -6,6 +8,15 @@
   20% { filter:brightness(30%)}
   70% { filter:brightness(110%)}
   100% { filter:brightness(120%) }
+}
+
+@media (max-width: 600px) {
+  .App {
+    
+    .welcome-container {
+      height: 40dvh;
+    }
+  }
 }
 
 .welcome-container {

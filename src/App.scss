@@ -1,3 +1,22 @@
+@import './components/nav/nav.styles';
+@import './resources/variables';
+@import './components/welcome/welcome.styles';
+
+:root {
+  //media-query changes
+  //font-sizes
+  --fsXL: 3em;
+  --fsL: 2em;
+  --fsM: 1.25em;
+  --fsS: .75em;
+
+  //image-sizes
+  --imgXL: 50dvw;
+  --imgL: 30dvw;
+  --imgM: 15dvw;
+  --imgS: 7.5dvw;
+}
+
 *,
 *::after,
 *::before {
@@ -5,6 +24,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Varela Round', sans-serif;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -15,4 +35,39 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  width: 2em;
+  border-radius: 100vw;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 0, 0.509) 25%,
+    rgba(38, 175, 255, 0.513) 25% 50%,
+    rgba(255, 105, 180, 0.502) 50% 75%,
+    rgba(250, 242, 182, 0.1) 75% 100%
+  );
+  // background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 14.2%,
+    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 14.2% 28.4%,
+    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 28.4% 42.8%,
+    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 42.8% 57.1%,
+    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 57.1% 71.3%,
+    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 71.3% 85.5%,
+    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 85.5% 100%
+  );
+  border: 1px double white;
+  outline: 3px double goldenrod;
+  border-radius: 100vw;
+  box-shadow: inset 0 0 5px white, 0 0 5px goldenrod;
 }
