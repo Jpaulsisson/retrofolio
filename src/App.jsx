@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.scss'
 import Nav from './components/nav/nav.component'
 import Projects from './components/projects/projects.component'

@@ -48,38 +48,53 @@
 @media (max-width: 600px) {
   .App {
     .nav-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    height: 50px;
-    align-items: center;
-    justify-items: end;
+      position: fixed;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 1fr;
+      height: clamp(60px, 12dvh, 80px);
+      align-items: center;
+      justify-items: end;
     
       .logo-container {
         height: 100%;
-        width: 100%;
+        aspect-ratio: 5 / 3;
       }
 
       .nav-item-container {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        font-size: $fsS;
       }
   }
   }
 }
 
+@media (min-width: 601px) and (max-width: 1000px) {
+  .App {
+
+    .nav-container{
+
+      .nav-item-container {
+        width: 55%;
+      }
+    }
+  }
+}
+
 .nav-container {
+  position: fixed;
   display: flex;
+  align-items: end;
   justify-content: space-between;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 12dvh;
-  z-index: 1000;
+  height: clamp(70px, 12dvh, 90px);
+  z-index: 10;
   background-color: rgba($color: black, $alpha: .7);
   border-bottom: 3px solid rgba($color: black, $alpha: 1.0);
+  padding: 5px 30px;
 
   .logo-container {
     height: 95%;
@@ -93,7 +108,7 @@
     box-shadow: 4px 4px 15px $accentAqua, 4px 4px 15px $accentAqua inset, -4px -4px 15px $accentAqua inset;
     border-radius: 1em;
     animation: flicker-on 500ms 200ms 1 forwards;
-    text-decoration: none;
+    text-decoration: 3px underline $accentNeutral;
 
     .do-logo {
       align-self: end;
@@ -122,6 +137,11 @@
   }
   
   .nav-item-container {
+    display: flex;
+    justify-content: space-around;
+    height: 50%;
+    width: 30%;
+    font-size: $fsM;
     scroll-behavior: smooth;
 
     .nav-item {
@@ -131,20 +151,17 @@
 
     #projects-nav {
       color: $primaryPink;
-      text-shadow: 1px 1px 8px;
-      -webkit-text-stroke: 1px $primaryPink;
+      text-shadow: 4px 4px 4px $primaryPink;
       animation: fade-in 1500ms 1 forwards;
     }
     #about-me-nav {
       color: $primaryBlue;
-      text-shadow: 1px 1px 8px;
-      -webkit-text-stroke: 1px $primaryBlue;
+      text-shadow: 4px 4px 4px $primaryBlue;
       animation: fade-in 3000ms 1 forwards;
     }
     #contact-nav {
       color: $primaryYellow;
-      text-shadow: 1px 1px 8px;
-      -webkit-text-stroke: 1px $primaryYellow;
+      text-shadow: 4px 4px 4px $primaryYellow;
       animation: fade-in 4500ms 1 forwards;
     }
   }

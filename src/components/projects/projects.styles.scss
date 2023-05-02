@@ -16,6 +16,8 @@
       .projects-wrapper {
         height: 90dvh;
         display: flex;
+        align-items: center;
+        justify-content: center;
         
         .carousel-button {
           background-color: orangered;
@@ -35,7 +37,7 @@
 .projects-section-container {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: center; //consolidate to mixin
   justify-content: center;
   border: 3px solid rgba($color: rgb(255, 255, 255), $alpha: .8);
   outline: 2px solid aqua;
@@ -48,18 +50,19 @@
   // animation: breathe 90s linear 0s infinite alternate forwards;
 
   .projects-wrapper { 
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    // animation: breathe 70s linear 0s infinite alternate forwards;
-    height: 65dvh;
+    animation: breathe 70s linear 0s infinite alternate forwards;
+    height: 95%;
     width: 60dvw;
     background-color: rgba($color: rgb(9, 214, 255), $alpha: 1);
     z-index: -5;
 
     .projects-section-header {
+      align-self: start;
       color: white;
-      height: 50px;
       font-size: $fsXL;
       text-decoration: 7px underline rgb(250, 242, 182);
       text-shadow: 0 0 5px rgba($color: black, $alpha: 1);
@@ -72,9 +75,11 @@
   
   
     .carousel-buttons {
+      @include flexCenter();
+      position: absolute;
       height: $bigBtnH;
       aspect-ratio: 4 / 3;
-      font-size: $fsL;
+      font-size: $fsXL;
       color: orange;
       background-color: rgba($color: white, $alpha: .50);
       border: 3px double white;
@@ -82,7 +87,7 @@
       box-shadow: 0 0 5px goldenrod, 0 0 5px white inset;
       text-shadow: 0 0 5px orangered;
       -webkit-text-stroke: 1px black;
-      position: absolute;
+      
   }
 
   .carousel-buttons:hover,
@@ -93,10 +98,19 @@
   .go-left-button {
     background-color: rgba($color: black, $alpha: .15);
     transform: rotate(180deg);
+    left: 0%;
   }
 
   .go-right-button {
     background-color: rgba($color: black, $alpha: .15);
+    right: 0%;
+  }
+
+  .current-project-card {
+    position: absolute;
+    @include flexCenter();
+    height: $imgXL;
+    aspect-ratio: 1 / 1;
   }
 
   }
@@ -105,10 +119,10 @@
     content: ' ';
     height: 65dvh;
     width: 50dvw;
-    // transform: rotate(-5deg);
+    transform: rotate(-5deg);
     background-color: rgba($color: yellow, $alpha: 0.5);
     z-index: -5;
-    // animation: breathe 30s linear 0s infinite alternate forwards;
+    animation: breathe 30s linear 0s infinite alternate forwards;
   }
   .projects-wrapper::after {
     content: ' ';
@@ -116,13 +130,13 @@
     width: 45dvw;
     background-color: rgba($color: hotpink, $alpha: .5);
     position: absolute;
-    // transform: rotate(4deg);
+    transform: rotate(4deg);
     z-index: -5;
-    // animation: breathe 45s linear 0s infinite alternate forwards;
+    animation: breathe 45s linear 0s infinite alternate forwards;
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
   .projects-container {
     flex-direction: column;
 

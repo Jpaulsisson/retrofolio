@@ -10,21 +10,18 @@
   100% { filter:brightness(120%) }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .App {
-    
     .welcome-container {
-      height: 40dvh;
+      height: 50dvh;
     }
   }
 }
 
 .welcome-container {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter();
+  margin-top: 25dvh;
+  margin-bottom: 40dvh;
   height: 85dvh;
   width: 50dvw;
   filter: brightness(20%);

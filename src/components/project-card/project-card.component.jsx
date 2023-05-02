@@ -2,9 +2,9 @@ import React from 'react'
 
 function ProjectCard() {
   return (
-    <div className='project-card'>
-      
-    </div>
+    <a href='#' className='project-card'>
+      <img src='#' alt='#' />
+    </a>
   )
 }
 
