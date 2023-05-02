@@ -11,22 +11,25 @@
 
 @media (max-width: 600px) {
   .App {
-    .projects-container {
+    .projects-section-container {
 
       .projects-wrapper {
-        height: 90dvh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 60dvh;
+        width: 100%;
         
-        .carousel-button {
-          background-color: orangered;
+        .carousel-buttons {
+          height: $smallBtnH;
+          font-size: $fsS;
         }
 
-      }
-        ::-webkit-scrollbar {
-          width: 0;
+        .projects-section-header {
+          font-size: $fsL;
         }
+
+        .project-card {
+          height: $imgM;
+        }
+      }
     }
 
       
@@ -79,7 +82,7 @@
       position: absolute;
       height: $bigBtnH;
       aspect-ratio: 4 / 3;
-      font-size: $fsXL;
+      font-size: $fsL;
       color: orange;
       background-color: rgba($color: white, $alpha: .50);
       border: 3px double white;
@@ -98,19 +101,20 @@
   .go-left-button {
     background-color: rgba($color: black, $alpha: .15);
     transform: rotate(180deg);
-    left: 0%;
+    left: 3%;
   }
 
   .go-right-button {
     background-color: rgba($color: black, $alpha: .15);
-    right: 0%;
+    right: 3%;
   }
 
-  .current-project-card {
+  .project-card {
     position: absolute;
     @include flexCenter();
-    height: $imgXL;
+    height: $imgL;
     aspect-ratio: 1 / 1;
+    background-color: black;
   }
 
   }
@@ -136,23 +140,3 @@
   }
 }
 
-@media (max-width: 1100px) {
-  .projects-container {
-    flex-direction: column;
-
-    .projects-wrapper {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .carousel-button {
-    }
-
-    .go-left-button {      
-    }
-    .go-right-button {
-    }
-
-    
-  }
-}

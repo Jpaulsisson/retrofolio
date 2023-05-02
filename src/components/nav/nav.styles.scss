@@ -92,8 +92,7 @@
   width: 100%;
   height: clamp(70px, 12dvh, 90px);
   z-index: 10;
-  background-color: rgba($color: black, $alpha: .7);
-  border-bottom: 3px solid rgba($color: black, $alpha: 1.0);
+  background: linear-gradient(180deg, rgba($color: black, $alpha: 1),rgba($color: black, $alpha: 0.9), rgba($color: black, $alpha: 0.75), rgba($color: black, $alpha: 0.6), rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.4), rgba($color: black, $alpha: 0.2), transparent);
   padding: 5px 30px;
 
   .logo-container {
@@ -142,7 +141,6 @@
     height: 50%;
     width: 30%;
     font-size: $fsM;
-    scroll-behavior: smooth;
 
     .nav-item {
       text-decoration: none;
@@ -151,17 +149,17 @@
 
     #projects-nav {
       color: $primaryPink;
-      text-shadow: 4px 4px 4px $primaryPink;
+      text-shadow: 3px 3px 4px $primaryPink;
       animation: fade-in 1500ms 1 forwards;
     }
     #about-me-nav {
       color: $primaryBlue;
-      text-shadow: 4px 4px 4px $primaryBlue;
+      text-shadow: 3px 3px 4px $primaryBlue;
       animation: fade-in 3000ms 1 forwards;
     }
     #contact-nav {
       color: $primaryYellow;
-      text-shadow: 4px 4px 4px $primaryYellow;
+      text-shadow: 3px 3px 4px $primaryYellow;
       animation: fade-in 4500ms 1 forwards;
     }
   }
