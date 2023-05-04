@@ -8,8 +8,6 @@ import { useState } from 'react'
 
 function About() {
 
-  const [active, setActive] = useState(null);
-
   return (
     <div  id='about' className='about-container'>
       <div className="arrows-transition">
@@ -18,7 +16,7 @@ function About() {
         <img className='arrow-3'  src={Arrows} alt="neon arrows" />
         <img className='arrow-4'  src={Arrows} alt="neon arrows" />
       </div>
-      <h2 className='about-section-header'><span className={['first-letter', active ? 'active' : 'inactive']}>a</span>bout</h2> 
+      <h2 className='about-section-header section-header'><span>a</span>bout</h2> 
       <div className="about-section-content">
         <ul className="about-me">
           <li className='list-item'>

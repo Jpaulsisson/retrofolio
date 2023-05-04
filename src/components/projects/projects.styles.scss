@@ -28,6 +28,7 @@
 
         .project-card {
           height: $imgM;
+
         }
       }
     }
@@ -39,9 +40,7 @@
 
 .projects-section-container {
   position: relative;
-  display: flex;
-  align-items: center; //consolidate to mixin
-  justify-content: center;
+  @include flexCenter();
   border: 3px solid rgba($color: rgb(255, 255, 255), $alpha: .8);
   outline: 2px solid aqua;
   border-radius: 30px;
@@ -54,24 +53,34 @@
 
   .projects-wrapper { 
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     animation: breathe 70s linear 0s infinite alternate forwards;
     height: 95%;
-    width: 60dvw;
+    width: 95%;
     background-color: rgba($color: rgb(9, 214, 255), $alpha: 1);
     z-index: -5;
 
     .projects-section-header {
-      align-self: start;
+      grid-column: 1 / span 3;
+      text-align: center;
+      animation: turnOn 1200ms linear 1200ms 1 forwards;
       color: white;
       font-size: $fsXL;
       text-decoration: 7px underline rgb(250, 242, 182);
       text-shadow: 0 0 5px rgba($color: black, $alpha: 1);
+      filter: brightness(0%);
+
+        &.on span{
+          animation: flicker 1000ms linear 1200ms 2 forwards;
+        }
     }
 
-    .projects-section-header::first-letter {
+    .projects-section-header span {
+      filter: brightness(0%);
+      font-size: $fsM;
       text-decoration: underline white 7px;
       color: hotpink;
     }
@@ -79,7 +88,6 @@
   
     .carousel-buttons {
       @include flexCenter();
-      position: absolute;
       height: $bigBtnH;
       aspect-ratio: 4 / 3;
       font-size: $fsL;
@@ -101,20 +109,12 @@
   .go-left-button {
     background-color: rgba($color: black, $alpha: .15);
     transform: rotate(180deg);
-    left: 3%;
+    // left: 3%;
   }
 
   .go-right-button {
     background-color: rgba($color: black, $alpha: .15);
-    right: 3%;
-  }
-
-  .project-card {
-    position: absolute;
-    @include flexCenter();
-    height: $imgL;
-    aspect-ratio: 1 / 1;
-    background-color: black;
+    // right: 3%;
   }
 
   }
@@ -129,11 +129,11 @@
     animation: breathe 30s linear 0s infinite alternate forwards;
   }
   .projects-wrapper::after {
+    position: absolute;
     content: ' ';
     height: 55dvh;
     width: 45dvw;
     background-color: rgba($color: hotpink, $alpha: .5);
-    position: absolute;
     transform: rotate(4deg);
     z-index: -5;
     animation: breathe 45s linear 0s infinite alternate forwards;

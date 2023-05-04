@@ -1,10 +1,13 @@
-import React from 'react'
+import '../project-card/project-card.styles.scss';
+import Love from '../../resources/love-img.png';
 
 function ProjectCard() {
   return (
-    <a href='#' className='project-card'>
-      <img src='#' alt='#' />
-    </a>
+    <div className='project-card-container'>
+      <a href='#' className='project-card-link'>
+      <h3 className='project-card-header'>project sub-header</h3>
+      </a>
+    </div>
   )
 }
 

@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react'
-import WelcomeSign from '../../resources/hello-img-cropped.png'
-import '../welcome/welcome.styles.scss'
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import DataContext from '../../contexts/data.context';
+import WelcomeSign from '../../resources/hello-img-cropped.png';
+import '../welcome/welcome.styles.scss';
 
 function Welcome() {
+
+const { addScrollListener, removeScrollListener, goToPrev } = useContext(DataContext);
+
+useEffect(() => {
+  const app = document.querySelector('html');
+  if (app) {
+  app.addEventListener('scroll', (event) => {
+    console.log(event);
+  })
+
+  return () => {
+    app.removeEventListener('scroll', (event) => {
+      console.log(event);
+    });
+    }
+  }
+})
   
-  const [color, setColor] = useState('blue');
-
-  // const h1 = document.querySelector('h1');
-
-  // useEffect(() => {
-  //   h1.addEventListener('click', handleClick), 
-  //   [color]; 
-  // return () => h1.removeEventListener('click', handleClick)  
-  // })
-
-  // const handleClick = (event) => {
-  //   color === 'blue' ? setColor('orange') : setColor('blue');
-  //   console.log(event.target);
-  // }
-
   return (
-    <div 
-    className='welcome-container'
-    >
-
-      {/* <h1 style={{color: `${color}`}}> DELETE THIS BUT DONT FORGET TO START ADDING MEDIA QUERIES </h1> */}
+    <div className="welcome-container">
       <img
-        id='welcome-sign-img'
+        id="welcome-sign-img"
         src={WelcomeSign}
         className="welcome-sign-img"
       />
@@ -34,4 +34,4 @@ function Welcome() {
   );
 }
 
-export default Welcome
+export default Welcome;

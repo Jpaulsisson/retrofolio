@@ -1,0 +1,30 @@
+@import '../../resources/variables';
+
+
+.project-card-container {
+  position: relative;
+  background: url(../../resources/peace-img.jpeg) no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border: 3px double white;
+  outline: 3px double goldenrod;
+  border-radius: 25%;
+
+  .project-card-link {
+    text-decoration: none;
+  }
+  
+  .project-card-header {
+    height: 100%;
+    width: 100%;
+    border-radius: 25%;
+    background-color: rgba($color: white, $alpha: .2);
+    font-size: $fsL;
+    color: white;
+    text-align: center;
+  }
+  .project-card-header:hover {
+    background-color: transparent;
+  }
+}

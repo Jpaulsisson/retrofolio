@@ -29,3 +29,26 @@ $smallBtnH: 5dvh;
   align-items: center;
 }
 
+@keyframes flicker {
+  0% { filter: brightness(30%) }
+  5% { filter: brightness(100%)}
+  10% { filter: brightness(30%)}
+  15% { filter: brightness(100%)}
+  20% { filter:brightness(30%) }
+  70% { filter:brightness(110%) }
+  100% { filter:brightness(120%) }
+}
+
+@keyframes turnOn {
+  0% { filter: brightness(0%); text-shadow: 0 0 0; }
+  20% { filter: brightness(20%); text-shadow: 0 0 1px;}
+  40% { filter: brightness(40%); text-shadow: 0; }
+  60% { filter: brightness(60%); text-shadow: 1px 1px 2px; }
+  80% { filter: brightness(80%); text-shadow: 1px 1px 2px; }
+  100% { filter: brightness(110%); text-shadow: 1px 1px 2px; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}

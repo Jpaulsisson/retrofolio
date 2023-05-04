@@ -1,39 +1,21 @@
 @import '../../resources/variables';
 
-@keyframes rotate {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(90deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(270deg);}
-  100% { transform: rotate(360deg);}
-}
-
-@keyframes flicker {
-  0% { filter: brightness(30%) }
-  5% { filter: brightness(100%)}
-  10% { filter: brightness(30%)}
-  15% { filter: brightness(100%)}
-  20% { filter:brightness(30%) }
-  70% { filter:brightness(110%) }
-  100% { filter:brightness(120%) }
-}
-
 @media (min-width: 320px) and (max-width: 400px) {
   .App {
     .about-container {
       .arrows-transition {
         .arrow-1,
-        .arrow-3 {
-          height: $imgS;
-        }
         .arrow-2,
+        .arrow-3,
         .arrow-4 {
-          height: calc($imgS + 5px);
+          width: 25%;
         }
+
+      }
       }
     }
   }
-} //should be done
+
 
 @media (max-width: 780px) {
   .App {
@@ -110,14 +92,21 @@
   }
 
   .about-section-header {
+      filter: brightness(0%);
+      animation: turnOn 1800ms linear 1200ms 1 forwards;
       margin-block: 50px 100px;
       color: white;
       font-size: $fsXL;
       text-decoration: 7px underline rgb(250, 242, 182);
-      text-shadow: 0 0 5px rgba($color: black, $alpha: 1);
+
+      &.on span{
+        filter: brightness(0%);
+        animation: flicker 800ms linear 1200ms 3 forwards;
+      }
   }
 
   .about-section-header span {
+    font-size: $fsM;
     text-decoration: underline white 7px;
     color: rgb(9, 214, 255);
     text-shadow: 0 0 8px rgb(9, 214, 255);
