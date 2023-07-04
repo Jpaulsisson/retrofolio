@@ -1,35 +1,33 @@
-import { useContext } from 'react';
-import { useEffect } from 'react';
-import DataContext from '../../contexts/data.context';
-import WelcomeSign from '../../resources/hello-img-cropped.png';
 import '../welcome/welcome.styles.scss';
+import WavesUp from '../../resources/layered-waves-bottom-up.svg'
+import OldTV from '../../resources/cropped-better-old-tv.png'
+
 
 function Welcome() {
-
-const { addScrollListener, removeScrollListener, goToPrev } = useContext(DataContext);
-
-useEffect(() => {
-  const app = document.querySelector('html');
-  if (app) {
-  app.addEventListener('scroll', (event) => {
-    console.log(event);
-  })
-
-  return () => {
-    app.removeEventListener('scroll', (event) => {
-      console.log(event);
-    });
-    }
-  }
-})
   
   return (
     <div className="welcome-container">
-      <img
-        id="welcome-sign-img"
-        src={WelcomeSign}
-        className="welcome-sign-img"
-      />
+      <img className='waves' src={WavesUp} alt='groovy-waves' /> 
+      <h1 className='welcome-header'>
+        <span className='letter'>H</span>
+        <span className='letter'>e</span>
+        <span className='letter'>l</span>
+        <span className='letter'>l</span>
+        <span className='letter'>o </span>
+        <span className='letter'>f</span>
+        <span className='letter'>r</span>
+        <span className='letter'>i</span>
+        <span className='letter'>e</span>
+        <span className='letter'>n</span>
+        <span className='letter'>d</span>
+        <span className='letter'>,</span>
+      </h1>
+      <h2 className='welcome-subheader'>my name is <span className="my-name">Paul Sisson</span>.</h2>
+      {/* <p className='welcome-subtext'>I am a ...</p> */}
+      <div className='tv-display'>
+        <img className='old-tv-img' src={OldTV} alt='old tv' />
+        <span className='tv-tint'>Watch</span>
+      </div>
     </div>
   );
 }

@@ -1,128 +1,115 @@
 @import '../../resources/variables';
 
 @keyframes breathe {
-  0% { border-radius: 10% 25% 35% 50%; }
-  20% { border-radius: 35% 50% 10% 25%; }
-  40% { border-radius: 45% 25% 35% 50%; }
-  60% { border-radius: 25% 35% 50% 20%; }
-  80% { border-radius: 20% 45% 45% 30%; }
-  100% { border-radius: 15% 20% 15% 20%; }
+  0% { border-radius: 10vw 25vw 35vw 50vw; }
+  20% { border-radius: 35vw 50vw 10vw 25vw; }
+  40% { border-radius: 45vw 25vw 35vw 50vw; }
+  60% { border-radius: 25vw 35vw 50vw 20vw; }
+  80% { border-radius: 20vw 45vw 45vw 30vw; }
+  100% { border-radius: 15vw 20vw 15vw 20vw; }
 }
 
-@media (max-width: 600px) {
-  .App {
-    .projects-section-container {
-
-      .projects-wrapper {
-        height: 60dvh;
-        width: 100%;
-        
-        .carousel-buttons {
-          height: $smallBtnH;
-          font-size: $fsS;
-        }
-
-        .projects-section-header {
-          font-size: $fsL;
-        }
-
-        .project-card {
-          height: $imgM;
-
-        }
-      }
-    }
-
-      
-    
-  }
-}
 
 .projects-section-container {
-  position: relative;
   @include flexCenter();
+  margin: 5vh auto;
+  position: relative;
   border: 3px solid rgba($color: rgb(255, 255, 255), $alpha: .8);
   outline: 2px solid aqua;
   border-radius: 30px;
   background-color: rgba($color: rgb(170, 170, 170), $alpha: 1);
-  height: 75dvh;
-  width: 75dvw;
+  width: 90%;
+  height: 100%;
+  aspect-ratio: 1;
   z-index: 1;
-  box-shadow: 0 0 100px white, 0 0 100px black inset;
-  // animation: breathe 90s linear 0s infinite alternate forwards;
+  box-shadow: 0 0 200px white, 0 0 100px black inset;
+
 
   .projects-wrapper { 
+    @include flexCenter();
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
     animation: breathe 70s linear 0s infinite alternate forwards;
-    height: 95%;
-    width: 95%;
+    width: 85%;
+    aspect-ratio: 1;
     background-color: rgba($color: rgb(9, 214, 255), $alpha: 1);
-    z-index: -5;
+    z-index: -5;  
 
-    .projects-section-header {
-      grid-column: 1 / span 3;
-      text-align: center;
-      animation: turnOn 1200ms linear 1200ms 1 forwards;
-      color: white;
-      font-size: $fsXL;
-      text-decoration: 7px underline rgb(250, 242, 182);
-      text-shadow: 0 0 5px rgba($color: black, $alpha: 1);
-      filter: brightness(0%);
-
-        &.on span{
-          animation: flicker 1000ms linear 1200ms 2 forwards;
-        }
-    }
-
-    .projects-section-header span {
-      filter: brightness(0%);
-      font-size: $fsM;
-      text-decoration: underline white 7px;
-      color: hotpink;
-    }
-  
-  
-    .carousel-buttons {
+    .project-card {
       @include flexCenter();
-      height: $bigBtnH;
-      aspect-ratio: 4 / 3;
-      font-size: $fsL;
-      color: orange;
-      background-color: rgba($color: white, $alpha: .50);
-      border: 3px double white;
-      outline: 3px double goldenrod;
-      box-shadow: 0 0 5px goldenrod, 0 0 5px white inset;
-      text-shadow: 0 0 5px orangered;
-      -webkit-text-stroke: 1px black;
-      
-  }
+      flex-direction: column;
+      row-gap: clamp(0.75rem, 2vh, 2rem);
+      background-color: transparent;
+      max-width: 70%;
+      opacity: .9;
+      text-decoration: none;
+      font-family: $fatFont;
+      letter-spacing: 1.65px;
+      text-align: center;
+      color: hsl(0, 0%, 15%);
+      font-size: clamp(0.75rem, 5vw, 2.25rem);
 
-  .carousel-buttons:hover,
-  .carousel-buttons:focus {
-    filter: brightness(150%);
-  }
+      .project-img {
+        border-radius: 25px;
+        max-width: 75%;
+        transition: all 500ms;
+        &:hover {
+          box-shadow: 0px 0px 8px 8px white, 0px 0px 8px 12px aqua;
+        }
+      }
 
-  .go-left-button {
-    background-color: rgba($color: black, $alpha: .15);
-    transform: rotate(180deg);
-    // left: 3%;
-  }
+      .project-tags-container {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
 
-  .go-right-button {
-    background-color: rgba($color: black, $alpha: .15);
-    // right: 3%;
-  }
+        .project-tag {
+          width: 12%;
+          opacity: .85;
+        }
+      }
+    }
 
+    .prev-button {
+      width: 5vw;
+      font-size: clamp(1.5rem, 7vw, 5rem);
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      left: 10%;
+      transform: rotate(180deg);
+      color: orangered;
+      opacity: .5;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+    
+    .next-button {
+      width: 5vw;
+      font-size: clamp(1.5rem, 7vw, 5rem);
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      right: 10%;
+      color: orangered;
+      opacity: .5;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
   }
   .projects-wrapper::before {
     position: absolute;
+    inset: 0;
+    margin: auto;
     content: ' ';
-    height: 65dvh;
-    width: 50dvw;
+    width: 90%;
+    aspect-ratio: 1;
     transform: rotate(-5deg);
     background-color: rgba($color: yellow, $alpha: 0.5);
     z-index: -5;
@@ -130,13 +117,23 @@
   }
   .projects-wrapper::after {
     position: absolute;
+    inset: 0;
+    margin: auto;
     content: ' ';
-    height: 55dvh;
-    width: 45dvw;
+    width: 65%;
+    aspect-ratio: 1;
     background-color: rgba($color: hotpink, $alpha: .5);
     transform: rotate(4deg);
     z-index: -5;
     animation: breathe 45s linear 0s infinite alternate forwards;
+  }
+
+
+
+  .project-tags {
+    @include flexCenter();
+    max-width: 50px;
+    aspect-ratio: 1;
   }
 }
 

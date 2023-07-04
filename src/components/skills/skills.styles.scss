@@ -1,0 +1,200 @@
+@import '../../resources/variables';
+
+.skills-container {
+    min-height: 40vh;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border-top: 15px solid hsl(17, 44%, 16%);
+    background-image: 
+    url('../../resources/circles2.svg'),
+    url('../../resources/circles2.svg'),
+    conic-gradient(
+        antiquewhite 0deg 1deg, 
+        #a99901 1deg 12deg,
+        hsl(345, 42%, 37%) 12deg 19deg,
+        antiquewhite 27deg 28deg,
+        #a99901 50deg 65deg,
+        #c0ffee 87deg 120deg,
+        antiquewhite 127deg 129deg,
+        hsl(17, 44%, 16%) 147deg 189deg,
+        #c0ffee 207deg 232deg,
+        #a99901 255deg 272deg,
+        antiquewhite 279deg 280deg,
+        hsl(345, 42%, 37%) 327deg 332deg,
+        #a99901 340deg 359deg,
+        antiquewhite 359deg 360deg,
+        );
+    background-size: 100% 100%, 50% 25%, 1% 100%;
+    background-repeat: no-repeat, repeat, repeat;
+
+    .skill {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 80%;
+        aspect-ratio: 1;
+        background-color: antiquewhite;
+        border-radius: 50%;
+        transition: all 500ms;
+        
+        
+        h3 {
+            font-size: clamp(1.25rem, 2.25vw, 2.5rem);
+            font-family: $groovyFont;
+            color: black;
+        }
+        img {
+            max-height: 70%;
+            border-radius: 50%;
+            aspect-ratio: 1;
+        }
+    }
+}
+
+#html {
+    position: relative;
+    border: 2vw double hsl(16, 51%, 54%);
+    grid-column: 1 / 4;
+    grid-row: 2 / 5;
+    -webkit-text-stroke: 1px hsl(16, 51%, 54%);
+        transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(16, 51%, 54%), hsl(16, 51%, 54%), transparent);
+    }
+    
+    &:hover {
+            transform: scale(1);
+            box-shadow: 0px 0px 300px hsl(16, 51%, 54%);
+        }
+}
+
+#html:hover#html::after {
+    content: 'Certified by CodeCademy';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    @include flexCenter();
+    inset: 0;
+    color:antiquewhite;
+    font-size: clamp(.75rem, 2vw, 1.5rem);
+    font-family: $groovyFont;
+    cursor: pointer;
+    background-color:hsl(16, 51%, 54%);
+}
+
+#css {
+    border: 2vw double hsl(217, 75%, 45%);
+    grid-column: 5 / 8;
+    grid-row: 1 / 4;
+    -webkit-text-stroke: 1px hsl(217, 75%, 45%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(217, 75%, 45%),hsl(217, 75%, 45%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(217, 75%, 45%);
+    }
+}
+
+#css:hover#css::after {
+    content: 'Certified by CodeCademy';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    @include flexCenter();
+    inset: 0;
+    color:antiquewhite;
+    font-size: clamp(.75rem, 2vw, 1.5rem);
+    font-family: $groovyFont;
+    cursor: pointer;
+    background-color: hsl(217, 75%, 45%);
+}
+
+#javascript {
+    border: 2vw double hsl(52, 89%, 37%);
+    grid-column: 5 / 8;
+    grid-row: 5 / 8;
+    -webkit-text-stroke: 1px hsl(52, 89%, 37%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(52, 89%, 37%),hsl(52, 89%, 37%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(52, 89%, 37%);
+    }
+}
+
+#javascript:hover#javascript::after {
+    content: 'Certified by CodeCademy';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    @include flexCenter();
+    inset: 0;
+    color:antiquewhite;
+    font-size: clamp(.75rem, 2vw, 1.5rem);
+    font-family: $groovyFont;
+    cursor: pointer;
+    background-color: hsl(52, 89%, 37%);
+}
+
+#react {
+    border: 2vw double hsl(192, 95%, 68%);
+    grid-column: 8 / 11;
+    grid-row: 4 / 7;
+    -webkit-text-stroke: 1px hsl(192, 95%, 68%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(192, 95%, 68%), hsl(192, 95%, 68%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(192, 95%, 68%);
+    }
+}
+
+#sass {
+    border: 2vw double hsl(330, 60%, 65%);
+    grid-column: 8 / 11;
+    grid-row: 8 / 11;
+    -webkit-text-stroke: 1px hsl(330, 60%, 65%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(330, 60%, 65%), hsl(330, 60%, 65%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(330, 60%, 65%);
+    }
+}
+
+#typescript {
+    border: 2vw double hsl(212, 54%, 37%);
+    grid-column: 1 / 4;
+    grid-row: 8 / 11;
+    -webkit-text-stroke: 1px hsl(212, 54%, 37%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(212, 54%, 37%), hsl(212, 54%, 37%), transparent);
+        width: 70%;
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(212, 54%, 37%);
+    }
+}

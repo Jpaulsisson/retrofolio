@@ -1,26 +1,27 @@
 //colors
-$primaryBlue: rgb(79, 205, 255);
-$primaryYellow: yellow;
-$primaryPink: hotpink;
-$accentNeutral: rgb(250, 242, 182);
-$accentAqua: rgb(25, 255, 171);
+$primaryBlue: hsl(197, 100%, 65%);
+$primaryYellow: hsl(60, 100%, 50%);
+$primaryPink: hsl(330, 100%, 71%);
+$accentNeutral: hsl(53, 87%, 85%);
+$accentAqua: hsl(158, 100%, 55%);
 
-//font-sizes
-$fsXL: 4.5em;
-$fsL: 3em;
-$fsM: 1.5em;
-$fsS: 1em;
+//fonts
+$handwritingFont: 'Indie Flower';
+$gamerFont: 'Press Start 2P';
+$groovyFont: 'Spicy Rice';
+$threeDFont: 'Bungee Shade';
+$fatFont: 'Monoton';
 
 //image-sizes
-$imgXL: 50dvh;
-$imgL: 30dvh;
-$imgM: 20dvh;
-$imgS: 10dvh;
+$imgXL: 50vh;
+$imgL: 30vh;
+$imgM: 20vh;
+$imgS: 10vh;
 
 //button-sizes
-$bigBtnH: 9dvh;
-$mediumBtnH: 7dvh;
-$smallBtnH: 5dvh;
+$bigBtnH: 9vh;
+$mediumBtnH: 7vh;
+$smallBtnH: 5vh;
 
 
 @mixin flexCenter() {

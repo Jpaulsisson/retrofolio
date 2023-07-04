@@ -1,166 +1,200 @@
 @import '../../resources/variables';
 
-@keyframes fade-in {
-  from {
-    filter: brightness(0%);
-  }
-  to {
-    filter: brightness(120%);
-  }
+@keyframes changeNavMusic {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  20% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 0; }
+  70% { opacity: 0; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes changeNavBarber {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 1; }
+  50% { opacity: 1; }
+  60% { opacity: 1; }
+  70% { opacity: 0; }
+  80% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes changeNavCoder {
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+  20% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 0; }
+  50% { opacity: 0; }
+  60% { opacity: 0; }
+  70% { opacity: 1; }
+  80% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
-@keyframes flicker-on {
-  0% { filter: brightness(0%);
-      text-shadow: none;
-      }
-  10% { filter: brightness(100%);
-    text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  20% { filter: brightness(0%);
-      text-shadow: none;
-      }
-  30% { filter: brightness(100%);
-    text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  40% { filter: brightness(0%);
-      text-shadow: none;
-      }
-  50% { filter: brightness(55%);
-        text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  60% { filter: brightness(0%);
-        text-shadow: none;
-      }
-  70% { filter: brightness(25%);
-        text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  80% { filter: brightness(75%);
-        text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  90% { filter: brightness(75%);
-        text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-  100% { filter: brightness(120%) saturate(200%);
-        text-shadow: 1px 1px 8px, -1px -1px 8px;
-      }
-}
-
-@media (max-width: 600px) {
-  .App {
-    .nav-container {
-      position: fixed;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: 1fr;
-      height: clamp(60px, 12dvh, 80px);
-      align-items: center;
-      justify-items: end;
-    
-      .logo-container {
-        height: 100%;
-        aspect-ratio: 5 / 3;
-      }
-
-      .nav-item-container {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        font-size: $fsS;
-      }
-  }
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1000px) {
-  .App {
-
-    .nav-container{
-
-      .nav-item-container {
-        width: 55%;
-      }
-    }
-  }
-}
-
-.nav-container {
-  position: fixed;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
+.nav-bar-music,
+.nav-bar-barber,
+.nav-bar-coder {
+  --fadeDuration: 30s;
+  --titleFontSize: clamp(2rem, 3.5vw, 3.5rem);
+  --navLinkFontSize: clamp(1.75rem, 3vw, 2.75rem);
+  position: absolute;
   width: 100%;
-  height: clamp(70px, 12dvh, 90px);
-  z-index: 10;
-  background: linear-gradient(180deg, rgba($color: black, $alpha: 1),rgba($color: black, $alpha: 0.9), rgba($color: black, $alpha: 0.75), rgba($color: black, $alpha: 0.6), rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.4), rgba($color: black, $alpha: 0.2), transparent);
-  padding: 5px 30px;
+  height: 8vh;
+  background-color: transparent;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  padding-inline: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: var(--navLinkFontSize);
 
-  .logo-container {
-    height: 95%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    gap: 5px;
-    grid-template-columns: repeat(3, 1fr);   
-    grid-template-rows: repeat(2, 1fr);
-    border: 5px solid $accentAqua;
-    box-shadow: 4px 4px 15px $accentAqua, 4px 4px 15px $accentAqua inset, -4px -4px 15px $accentAqua inset;
-    border-radius: 1em;
-    animation: flicker-on 500ms 200ms 1 forwards;
-    text-decoration: 3px underline $accentNeutral;
-
-    .do-logo {
-      align-self: end;
-      color: $accentNeutral;
-      animation: flicker-on 2000ms 500ms 1 forwards;
+    :nth-child(1) {
+      margin-inline: 15px;
     }
-
-    .what-logo {
-      align-self: end;
-      color: $accentNeutral;
-      animation: flicker-on 1500ms 500ms 1 forwards;
+    :nth-child(2) {
+      margin-inline: 15px;
     }
-
-    .you-logo {
-      align-self: end;
-      color: $accentNeutral;
-      animation: flicker-on 700ms 500ms 1 forwards;
+    :nth-child(3) {
+      margin-inline: 15px;
     }
+}
 
-    .love-logo {
-      grid-column: span 3;
-      color: $primaryPink;
-      animation: flicker-on 4000ms 500ms 1 forwards;
-    }
-  
+.nav-buttons-music,
+.nav-buttons-barber,
+.nav-buttons-coder {
+  justify-self: left;
+}
+
+.hello-img {
+
+  max-width: 100px;
+}
+
+.nav-bar-music {
+  animation: changeNavMusic var(--fadeDuration) linear 0s infinite;
+  -webkit-text-stroke: 1px antiquewhite;
+
+  .nav-item-music:nth-child(1) {
+    color: transparent;
+    background-image: 
+    radial-gradient(circle at center, hsl(52, 100%, 50%) 0% 30%, transparent 30% 100%),
+    linear-gradient(90deg, hsl(0, 0%, 30%), hsl(0, 0%, 21%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 4% 10%;
+
   }
-  
-  .nav-item-container {
-    display: flex;
-    justify-content: space-around;
-    height: 50%;
-    width: 30%;
-    font-size: $fsM;
+  .nav-item-music:nth-child(2) {
+    color: transparent;
+    background-image:
+      radial-gradient(circle at center, hsl(52, 100%, 50%) 0% 30%, transparent 30% 100%),
+      linear-gradient(90deg, hsl(0, 0%, 30%), hsl(0, 0%, 21%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 4% 10%;
+  }
+  .nav-item-music:nth-child(3) {
+    color: transparent;
+    background-image: 
+      radial-gradient(circle at center, hsl(52, 100%, 50%) 0% 30%, transparent 30% 100%),
+      linear-gradient(90deg, hsl(0, 0%, 30%), hsl(0, 0%, 21%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 4% 10%;
+  }
 
-    .nav-item {
-      text-decoration: none;
-      border-bottom: 5px solid $accentNeutral;
-    }
-
-    #projects-nav {
-      color: $primaryPink;
-      text-shadow: 3px 3px 4px $primaryPink;
-      animation: fade-in 1500ms 1 forwards;
-    }
-    #about-me-nav {
-      color: $primaryBlue;
-      text-shadow: 3px 3px 4px $primaryBlue;
-      animation: fade-in 3000ms 1 forwards;
-    }
-    #contact-nav {
-      color: $primaryYellow;
-      text-shadow: 3px 3px 4px $primaryYellow;
-      animation: fade-in 4500ms 1 forwards;
-    }
+  .nav-title-music {
+    font-size: var(--titleFontSize);
+    font-weight: 700;
+    color: transparent;
+    background-image: radial-gradient(circle at center, hsl(52, 100%, 50%) 0% 30%, transparent 30% 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 4% 10%;
   }
 }
+
+.nav-bar-barber {
+  animation: changeNavBarber var(--fadeDuration) linear 0s infinite;
+  -webkit-text-stroke: 1px antiquewhite;
+
+  .nav-item-barber:nth-child(1) {
+    background-image: linear-gradient(45deg,hsl(214, 100%, 25%) 0% 15%, antiquewhite 15% 45%, hsl(0, 100%, 25%) 45% 75%, antiquewhite 75% 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-item-barber:nth-child(2) {
+    background-image: linear-gradient(45deg, antiquewhite 0% 25%, hsl(214, 100%, 25%) 25% 55%, antiquewhite 55% 85%, hsl(0, 100%, 25%) 85% 00%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-item-barber:nth-child(3) {
+    background-image: linear-gradient(45deg, hsl(0, 100%, 25%) 0% 25%, antiquewhite 25% 55%, hsl(214, 100%, 25%) 55% 85%, antiquewhite 85% 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-title-barber {
+    background-image: linear-gradient(45deg, antiquewhite 0% 20%, hsl(0, 100%, 25%) 20% 40%, antiquewhite 40% 60%,hsl(214, 100%, 25%) 60% 80%, antiquewhite 80% 100%);
+    font-size: var(--titleFontSize);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    -webkit-text-stroke: 1px white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.nav-bar-coder {
+  animation: changeNavCoder var(--fadeDuration) linear 0s infinite;
+
+  .nav-item-coder:nth-child(1) {
+    background-color: hsl(60deg 100% 95.49%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nav-item-coder:nth-child(2) {
+    background-image: linear-gradient(90deg,hsl(60deg 100% 95.49%), hsl(300deg 100% 78.43%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nav-item-coder:nth-child(3) {
+    background-color: hsl(300deg 100% 78.43%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .nav-title-coder {
+    background-image: linear-gradient(80deg, hsl(60deg 100% 95.49%), hsl(300deg 100% 78.43%));
+    font-size: var(--titleFontSize);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 100;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+
