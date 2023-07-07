@@ -1,5 +1,6 @@
 @import '../../resources/variables';
 
+
 .skills-container {
     min-height: 40vh;
     padding: 1rem;
@@ -62,7 +63,8 @@
     grid-column: 1 / 4;
     grid-row: 2 / 5;
     -webkit-text-stroke: 1px hsl(16, 51%, 54%);
-        transform:scale(.75);
+    transform: scale(.75);
+
     img {
         background-image: radial-gradient(circle at center, hsl(16, 51%, 54%), hsl(16, 51%, 54%), transparent);
     }
@@ -72,9 +74,9 @@
             box-shadow: 0px 0px 300px hsl(16, 51%, 54%);
         }
 }
-
+//show certified
 #html:hover#html::after {
-    content: 'Certified by CodeCademy';
+    content: 'Certified by Code Academy';
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -84,7 +86,6 @@
     color:antiquewhite;
     font-size: clamp(.75rem, 2vw, 1.5rem);
     font-family: $groovyFont;
-    cursor: pointer;
     background-color:hsl(16, 51%, 54%);
 }
 
@@ -103,9 +104,9 @@
         box-shadow: 0px 0px 300px hsl(217, 75%, 45%);
     }
 }
-
+//show certified
 #css:hover#css::after {
-    content: 'Certified by CodeCademy';
+    content: 'Certified by Code Academy';
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -115,28 +116,27 @@
     color:antiquewhite;
     font-size: clamp(.75rem, 2vw, 1.5rem);
     font-family: $groovyFont;
-    cursor: pointer;
     background-color: hsl(217, 75%, 45%);
 }
 
 #javascript {
-    border: 2vw double hsl(52, 89%, 37%);
+    border: 2vw double hsl(52, 90%, 43%);
     grid-column: 5 / 8;
-    grid-row: 5 / 8;
-    -webkit-text-stroke: 1px hsl(52, 89%, 37%);
+    grid-row: 4 / 7;
+    -webkit-text-stroke: 1px hsl(52, 90%, 43%);
     transform:scale(.75);
     img {
-        background-image: radial-gradient(circle at center, hsl(52, 89%, 37%),hsl(52, 89%, 37%), transparent);
+        background-image: radial-gradient(circle at center, hsl(52, 90%, 43%),hsl(52, 90%, 43%), transparent);
     }
 
     &:hover {
         transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(52, 89%, 37%);
+        box-shadow: 0px 0px 300px hsl(52, 90%, 43%);
     }
 }
-
+//show certified
 #javascript:hover#javascript::after {
-    content: 'Certified by CodeCademy';
+    content: 'Certified by Code Academy';
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -146,14 +146,13 @@
     color:antiquewhite;
     font-size: clamp(.75rem, 2vw, 1.5rem);
     font-family: $groovyFont;
-    cursor: pointer;
-    background-color: hsl(52, 89%, 37%);
+    background-color: hsl(52, 90%, 43%);
 }
 
 #react {
     border: 2vw double hsl(192, 95%, 68%);
     grid-column: 8 / 11;
-    grid-row: 4 / 7;
+    grid-row: 3 / 6;
     -webkit-text-stroke: 1px hsl(192, 95%, 68%);
     transform:scale(.75);
     img {
@@ -185,7 +184,7 @@
 #typescript {
     border: 2vw double hsl(212, 54%, 37%);
     grid-column: 1 / 4;
-    grid-row: 8 / 11;
+    grid-row: 6 / 9;
     -webkit-text-stroke: 1px hsl(212, 54%, 37%);
     transform:scale(.75);
     img {
@@ -197,4 +196,48 @@
         transform:scale(1);
         box-shadow: 0px 0px 300px hsl(212, 54%, 37%);
     }
+}
+//show certified
+#typescript:hover#typescript::after {
+    content: 'Certified by Code Academy';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    @include flexCenter();
+    inset: 0;
+    color:antiquewhite;
+    font-size: clamp(.75rem, 2vw, 1.5rem);
+    font-family: $groovyFont;
+    background-color: hsl(212, 54%, 37%);
+}
+
+#git {
+    border: 2vw double hsl(16, 60%, 45%);
+    grid-column: 4 / 7;
+    grid-row: 8 / 11;
+    -webkit-text-stroke: 1px hsl(16, 60%, 45%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(16, 60%, 45%),hsl(16, 60%, 45%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(16, 60%, 45%);
+    }
+}
+//show certified
+#git:hover#git::after {
+    content: 'Certified by Colt Steele / Udemy';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    @include flexCenter();
+    inset: 0;
+    color:antiquewhite;
+    font-size: clamp(.75rem, 2vw, 1.5rem);
+    font-family: $groovyFont;
+    background-color: hsl(16, 60%, 45%);
 }

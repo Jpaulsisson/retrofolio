@@ -1,67 +1,21 @@
 @import '../../resources/variables';
 
 @keyframes whiteNoise {
-  0% {
-      background-image: 
-        linear-gradient(90deg, red 0% 15%, orange 15% 30%, yellow 30% 45%, green 45% 60%, blue 60% 75%, indigo 75% 90%, purple 90% 100%);
-    }
-  19% {
-      background-image: 
-        linear-gradient(90deg, red 0% 15%, orange 15% 30%, yellow 30% 45%, green 45% 60%, blue 60% 75%, indigo 75% 90%, purple 90% 100%);
-    }
 
   20% { background-image: url('../../resources/white-noise-bg1.svg');}
   21% { background-image: url('../../resources/white-noise-bg2.svg');}
   22% { background-image: url('../../resources/white-noise-bg3.svg');}
   23% { background-image: url('../../resources/white-noise-bg4.svg');}
-  26% {
-      background-image: 
-      url('../../resources/cropped.png');
-    }
-  49% {
-      background-image: 
-      url('../../resources/cropped.png');
-    }
+
   50% { background-image: url('../../resources/white-noise-bg1.svg');}
   51% { background-image: url('../../resources/white-noise-bg2.svg');}
   52% { background-image: url('../../resources/white-noise-bg3.svg');}
   53% { background-image: url('../../resources/white-noise-bg4.svg');}
-  54% { background-image: url('../../resources/white-noise-bg2.svg');}
-  55% { background-image: url('../../resources/white-noise-bg3.svg');}
 
-  56% {
-      background-image: 
-        url('../../resources/barberchairs.jpeg');
-    }
-  74% {
-      background-image: 
-        url('../../resources/barberchairs.jpeg');
-    }
   75% { background-image: url('../../resources/white-noise-bg1.svg');}
   76% { background-image: url('../../resources/white-noise-bg2.svg');}
   77% { background-image: url('../../resources/white-noise-bg3.svg');}
   78% { background-image: url('../../resources/white-noise-bg4.svg');}
-  79% { background-image: url('../../resources/white-noise-bg2.svg');}
-  80% { background-image: url('../../resources/white-noise-bg3.svg');}
-
-  81% {
-      background-image: 
-        linear-gradient(90deg, red 0% 15%, orange 15% 30%, yellow 30% 45%, green 45% 60%, blue 60% 75%, indigo 75% 90%, purple 90% 100%);
-    }
-  82% { background-image: url('../../resources/white-noise-bg1.svg');}
-  83% { background-image: url('../../resources/white-noise-bg2.svg');}
-  84% { background-image: url('../../resources/white-noise-bg3.svg');}
-  85% { background-image: url('../../resources/white-noise-bg4.svg');}
-  86% { background-image: url('../../resources/white-noise-bg2.svg');}
-  87% { background-image: url('../../resources/white-noise-bg3.svg');}
-  88% {
-    background-image: 
-      url('../../resources/get-up-img.jpeg');
-  }
-  100% {
-    background-image: 
-      url('../../resources/get-up-img.jpeg');
-  }
 
 }
 

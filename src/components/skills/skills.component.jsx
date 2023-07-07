@@ -5,17 +5,17 @@ import JSIcon from '../../resources/JS-icon.svg'
 import ReactIcon from '../../resources/React-icon.svg'
 import SassIcon from '../../resources/Sass-icon.svg'
 import TSIcon from '../../resources/typescript-icon.svg'
+import GitIcon from '../../resources/Git-icon.svg'
 
 
 function Skills() {
 
-  //add a link to each div that has a certification with a url
   return (
     <div  id='skills' className='skills-container' >
-      <a href='#' className='skill' id='html'>
+      <div href='#' className='skill' id='html'>
         <img src={HTMLIcon} alt='html icon' />
         <h3 className='skill-title'>HTML</h3>
-      </a>
+      </div>
       <div className='skill' id='css'>
         <img src={CSSIcon} alt='css icon' />
         <h3 className='skill-title'>CSS</h3>
@@ -35,6 +35,10 @@ function Skills() {
       <div className='skill' id='typescript'>
         <img src={TSIcon} alt='typescript icon' />
         <h3 className='skill-title'>TS</h3>
+      </div>
+      <div className='skill' id='git'>
+        <img src={GitIcon} alt='git icon' />
+        <h3 className='skill-title'>Git</h3>
       </div>
     </div>
   
