@@ -67,17 +67,9 @@
 }
 
 html {
-  background-image: 
-  linear-gradient(
-    45deg, 
-    hsl(70, 20%, 60%), 
-    hsl(70, 20%, 50%), 
-    hsl(70, 20%, 40%), 
-    hsl(70, 20%, 30%),
-    hsl(70, 20%, 20%));
-    background-size: 100% 100%;
+  background-color: hsl(80, 30%, 25%);
   display: grid;
-  place-content: center;
+  justify-items: center;
 }
 
 body {
@@ -152,23 +144,26 @@ img {
 
       .grid-cell {
         display: inline-block;
-        max-width: 12px;
         width: 100%;
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.35);
+        background-color: hsla(0, 0%, 100%, 0.35);
 
         &:nth-child(4n) {
-          box-shadow: 0 0 8px rgb(255, 45, 150);
+          box-shadow: 0 0 5px inset $primaryPink, 0 0 15px  $primaryPink;
+          max-width: 12%;
         }
         &:nth-child(4n - 1) {
-          box-shadow: 0 0 8px yellow;
+          box-shadow: 0 0 5px inset $primaryYellow, 0 0 15px $primaryYellow;
+          max-width: 15%;
         }
         &:nth-child(4n - 2) {
-          box-shadow: 0 0 8px rgb(0, 191, 255);
+          box-shadow: 0 0 5px inset $primaryBlue, 0 0 15px $primaryBlue;
+          max-width: 18%;
         }
         &:nth-child(4n - 3) {
-          box-shadow: 0 0 8px #c0ffee;
+          box-shadow: 0 0 5px inset $accentNeutral, 0 0 15px inset $accentNeutral;
+          max-width: 8%;
         }
 
         @for $i from 1 to 101 {
@@ -220,23 +215,26 @@ img {
   border-radius: 100vw;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 0, 0.509) 25%,
-    rgba(38, 175, 255, 0.513) 25% 50%,
-    rgba(255, 105, 180, 0.502) 50% 75%,
-    rgba(250, 242, 182, 0.1) 75% 100%
+    $primaryYellow 25%,
+    $primaryBlue 25% 50%,
+    $primaryPink 50% 75%,
+    $accentNeutral 75% 100%
   );
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     45deg,
-    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 14.2%,
-    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 14.2% 28.4%,
-    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 28.4% 42.8%,
-    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 42.8% 57.1%,
-    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 57.1% 71.3%,
-    rgba($color: rgb(113, 255, 250), $alpha: 0.5) 71.3% 85.5%,
-    rgba($color: rgb(86, 86, 86), $alpha: 0.5) 85.5% 100%
+    rgba($color: $accentNeutral, $alpha: 1) 10%,
+    rgba($color: $primaryPink, $alpha: 1) 10% 20%,
+    rgba($color: $accentNeutral, $alpha: 1) 20% 30%,
+    rgba($color: $primaryBlue, $alpha: 1) 30% 40%,
+    rgba($color: $accentNeutral, $alpha: 1) 40% 50%,
+    rgba($color: $primaryPink, $alpha: 1) 50% 60%,
+    rgba($color: $accentNeutral, $alpha: 1) 60% 70%,
+    rgba($color: $primaryBlue, $alpha: 1) 70% 80%,
+    rgba($color: $accentNeutral, $alpha: 1) 80% 90%,
+    rgba($color: $primaryPink, $alpha: 1) 90% 100%
   );
   border: 1px double white;
   outline: 3px double goldenrod;

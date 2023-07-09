@@ -13,14 +13,15 @@ function Welcome() {
         <span className='letter'>e</span>
         <span className='letter'>l</span>
         <span className='letter'>l</span>
-        <span className='letter'>o </span>
-        <span className='letter'>f</span>
-        <span className='letter'>r</span>
-        <span className='letter'>i</span>
-        <span className='letter'>e</span>
-        <span className='letter'>n</span>
-        <span className='letter'>d</span>
-        <span className='letter'>,</span>
+        <span className='letter'>o</span>
+        
+        <span className='letter2'>f</span>
+        <span className='letter2'>r</span>
+        <span className='letter2'>i</span>
+        <span className='letter2'>e</span>
+        <span className='letter2'>n</span>
+        <span className='letter2'>d</span>
+        <span className='letter2'>,</span>
       </h1>
       <h2 className='welcome-subheader'>my name is <span className="my-name">Paul Sisson</span>.</h2>
       {/* <p className='welcome-subtext'>I am a ...</p> */}

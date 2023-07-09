@@ -1,1 +1,50 @@
 @import '../../resources/variables';
+
+
+.contact-section-container {
+  margin-block: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
+
+  .link-item {
+    @include flexCenter();
+    width: 15%;
+    aspect-ratio: 1;
+    padding: 2rem;
+    font-family: $gamerFont;
+    text-decoration: none;
+    color: white;
+    text-shadow: 
+    2px 2px 1px black,
+    -2px -2px 1px black,
+    2px -2px 1px black,
+    -2px 2px 1px black;
+    border: 2px double white;
+    
+    border-radius: 50% 25%;
+    background-size: 300% 300%;
+    background-position: bottom;
+    transition: all 300ms;
+
+    &:hover {
+      background-position: top;
+      border-radius: 25% 50%;
+      outline: 2px double $accentBrown;
+    }
+  }
+
+  .email-link {
+    background-image: linear-gradient(0deg,$accentNeutral 0% 27%, $primaryPink 27%);
+    outline: 2px double $primaryPink;
+  }
+  .phone-link {
+    background-image: linear-gradient(0deg,$accentNeutral 0% 27%, $primaryYellow 27%);
+    outline: 2px double $primaryYellow;
+  }
+  .linkedin-link {
+    background-image: linear-gradient(0deg,$accentNeutral 0% 27%, $primaryBlue 27%);
+    outline: 2px double $primaryBlue;
+  }
+}
