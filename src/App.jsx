@@ -31,7 +31,6 @@ function App() {
   });
   return (
     <div className="App">
-      {/* <Nav /> */}
       <Welcome />
       <div className="about-transition-container">
         <img className="waves-down" src={WavesDown} alt="groovy waves" />
