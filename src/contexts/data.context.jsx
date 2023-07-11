@@ -41,37 +41,43 @@ export const DataProvider = ({ children }) => {
       name: 'Age Calculator',
       href: 'https://calculate-age-fem.netlify.app',
       img: AgeCalculator,
-      tags: [HTMLIcon, SassIcon, JSIcon]
+      tags: [HTMLIcon, SassIcon, JSIcon],
+      repo: 'https://github.com/Jpaulsisson/age-calculator-app',
     },
     {
       name: 'Circle Paint',
       href: 'https://circle-paint.netlify.app/',
       img: CirclePaint,
-      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon]
+      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon],
+      repo: 'https://github.com/Jpaulsisson/circle-generator-app',
     },
     {
       name: 'Blackjack',
       href: 'https://jpaulsisson-blackjack.netlify.app/',
       img: Blackjack,
-      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon]
+      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon],
+      repo: 'https://github.com/Jpaulsisson/blackjack',
     },
     // {
     //   name: 'Smite Meta',
     //   href: '#',
     //   img: 'url()',
     //   tags: [HTMLIcon, SassIcon, JSIcon, ReactIcon]
+    //   repo: 'https://github.com/Jpaulsisson/age-calculator-app',
     // },
     {
       name: 'Customizable Counter',
       href: 'https://customizable-counter.netlify.app',
       img: Counter,
-      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon]
+      tags: [HTMLIcon, CSSIcon, JSIcon, ReactIcon],
+      repo: 'https://github.com/Jpaulsisson/wds-react-hooks-course/tree/main',
     },
     // {
     //   name: 'Trippin',
     //   href: '#',
     //   img: 'url()',
     //   tags: [HTMLIcon, SassIcon, JSIcon]
+    //   repo: 'https://github.com/Jpaulsisson/age-calculator-app',
     // },
   ]
 

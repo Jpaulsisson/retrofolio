@@ -43,29 +43,9 @@ function Projects() {
               </div>
         </a>
         <button className='prev-button' onClick={() => goToPrev(projects, currentProject)}>&#10170;</button>
-        <button className='next-button' onClick={() => goToNext(projects, currentProject)}>&#10170;</button>
-        {/* {currentShowing.map((project) => {
-          return (
-            <a
-              rel="noreferrer"
-              target="_blank"
-              href={project.href}
-              key={project.name}
-              className="project-card"
-            >
-              <h2>{project.name}</h2>
-              <img className='project-img' src={project.img} alt={project.name} />
-              <div className='project-tags-container'>
-                {project.tags.map((tag, index) => {
-                  return (
-                    <img className='project-tag' key={index} src={tag} alt='programming language icons' />
-                  )
-                })} 
-              </div>
-            </a>
-          );
-        })} */}
+        <button className='next-button' onClick={() => goToNext(projects, currentProject)}>&#10170;</button>  
       </div>
+      <a className='repo-link-button' href={currentShowing.repo} target='_blank' rel='noreferrer'>See the code</a>
     </div>
   );
 }

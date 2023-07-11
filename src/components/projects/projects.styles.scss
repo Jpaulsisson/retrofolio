@@ -9,9 +9,18 @@
   100% { border-radius: 15vw 20vw 15vw 20vw; }
 }
 
+@keyframes slideBg {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
 
 .projects-section-container {
   @include flexCenter();
+  flex-direction: column;
   margin: 5vh auto;
   position: relative;
   border: 3px solid rgba($color: rgb(255, 255, 255), $alpha: .8);
@@ -129,12 +138,64 @@
     animation: breathe 45s linear 0s infinite alternate forwards;
   }
 
-
-
   .project-tags {
     @include flexCenter();
     max-width: 50px;
     aspect-ratio: 1;
+  }
+
+  .repo-link-button {
+    position: relative;
+    @include flexCenter();
+    max-width: 45%;
+    padding: clamp(.1rem, 1vh, .5rem) clamp(.25rem, 3vw, 3rem);
+    border-radius: 100vmax;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 2.5px;
+    font-family: $fatFont;
+    font-size: clamp(.75rem, 3vw, 2rem);
+    cursor: pointer;
+    filter: brightness(135%);
+    background-image: linear-gradient(90deg, hsl(189.76deg 100% 51.76%) , hsl(6.67deg 34.88% 74.71%) , hsl(114.22deg 68.6% 76.27%) );
+    background-size: 500%;
+    animation: slideBg 5s linear 0s infinite alternate forwards;;
+    transition: all 500ms;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 105%;
+      width: 105%;
+      border: hsl(0, 0%, 15%, .5) solid 1px;
+      border-radius: 100vmax;
+      background-color: hsla(0, 0%, 0%, 0.125);
+      transition: all 400ms;
+    }
+    
+    &:hover {
+      filter:brightness(100%);
+      color: $primaryBlue;
+
+      &::after {
+        background-color: hsla(34, 78%, 91%, 0.125);
+        box-shadow: 
+        1vw 0px 1px hsl(345, 42%, 77%),
+        2vw 0px 1px hsl(345, 42%, 67%),
+        3vw 0px 1px hsl(345, 42%, 57%),
+        4vw 0px 1px hsl(345, 42%, 47%),
+        5vw 0px 1px $primaryPink,
+        -1vw 0px 1px hsl(54, 99%, 73%),
+        -2vw 0px 1px hsl(54, 99%, 63%),
+        -3vw 0px 1px hsl(54, 99%, 53%),
+        -4vw 0px 1px hsl(54, 99%, 43%),
+        -5vw 0px 1px $primaryYellow,
+        ;
+      }
+    }
   }
 }
 
