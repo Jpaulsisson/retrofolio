@@ -6,6 +6,7 @@ import ReactIcon from '../../resources/React-icon.svg'
 import SassIcon from '../../resources/Sass-icon.svg'
 import TSIcon from '../../resources/typescript-icon.svg'
 import GitIcon from '../../resources/Git-icon.svg'
+import TailwindIcon from '../../resources/tailwind-icon.svg'
 
 
 function Skills() {
@@ -39,6 +40,10 @@ function Skills() {
       <div className='skill' id='git'>
         <img src={GitIcon} alt='git icon' />
         <h3 className='skill-title'>Git</h3>
+      </div>
+      <div className='skill' id='tailwind'>
+        <img src={TailwindIcon} alt='tailwind icon' />
+        <h3 className='skill-title'>Tailwind</h3>
       </div>
     </div>
   
