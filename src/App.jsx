@@ -1,5 +1,4 @@
 import './App.scss';
-import Nav from './components/nav/nav.component';
 import Projects from './components/projects/projects.component';
 import Welcome from './components/welcome/welcome.component';
 import Skills from './components/skills/skills.component';
