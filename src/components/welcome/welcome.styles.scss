@@ -2,40 +2,16 @@
 
 @keyframes whiteNoise {
   0% { background-image: url('../../resources/hi.jpeg');} 
-  4% { background-image: url('../../resources/hi.jpeg');} 
-  5% { background-image: url('../../resources/thanks.jpeg');}
-  7% { background-image: url('../../resources/thanks.jpeg');}
-  8% { background-image: url('../../resources/4.jpeg');}
-  9% { background-image: url('../../resources/4.jpeg');}
-  10% { background-image: url('../../resources/stop.jpeg');}
-  14% { background-image: url('../../resources/stop.jpeg');}
-  15% { background-image: url('../../resources/iloveyou.jpeg');}
-  20% { background-image: url('../../resources/iloveyou.jpeg');}
-  21% { background-image: url('../../resources/and.jpeg');}
-  23% { background-image: url('../../resources/and.jpeg');}
-  24% { background-image: url('../../resources/beautiful.jpeg');}
-  30% { background-image: url('../../resources/beautiful.jpeg');}
-  31% { background-image: url('../../resources/together1.jpeg');}
-  35% { background-image: url('../../resources/together1.jpeg');}
-  36% { background-image: url('../../resources/together2.jpeg');}
-  40% { background-image: url('../../resources/together2.jpeg');}
-  41% { background-image: url('../../resources/together3.jpeg');}
-  45% { background-image: url('../../resources/together3.jpeg');}
-  46% { background-image: url('../../resources/wecan.jpeg');}
-  50% { background-image: url('../../resources/wecan.jpeg');}
-  51% { background-image: url('../../resources/show.png');}
-  55% { background-image: url('../../resources/show.png');}
-  56% { background-image: url('../../resources/allyouneed.jpeg');}
-  62% { background-image: url('../../resources/allyouneed.jpeg');}
-  63% { background-image: url('../../resources/loveyourself.jpeg');}
-  68% { background-image: url('../../resources/loveyourself.jpeg');}
-  69% { background-image: url('../../resources/loveall.jpg');}
-  75% { background-image: url('../../resources/loveall.jpg');}
-  76% { background-image: url('../../resources/withall.jpeg');}
-  81% { background-image: url('../../resources/withall.jpeg');}
-  82% { background-image: url('../../resources/everything.jpeg');}
-  85% { background-image: url('../../resources/everything.jpeg');}
-  86% { background-image: url('../../resources/answer.jpeg');}
+  20% { background-image: url('../../resources/hi.jpeg');} 
+  20% { background-image: url('../../resources/thanks.jpeg');}
+  40% { background-image: url('../../resources/thanks.jpeg');}
+  40% { background-image: url('../../resources/4.jpeg');}
+  45% { background-image: url('../../resources/4.jpeg');}
+  45% { background-image: url('../../resources/stop.jpeg');}
+  65% { background-image: url('../../resources/stop.jpeg');}
+  65% { background-image: url('../../resources/iloveyou.jpeg');}
+  90% { background-image: url('../../resources/iloveyou.jpeg');}
+  90% { background-image: url('../../resources/answer.jpeg');}
   100% { background-image: url('../../resources/answer.jpeg');}
   
 
@@ -145,7 +121,7 @@
     }
 
     .power-on.tv-tint {
-      animation: whiteNoise 60s linear 0s 1 forwards;
+      animation: whiteNoise 10s steps(1) 0s 1 forwards;
       color: transparent;
       background-color: grey;
     }
