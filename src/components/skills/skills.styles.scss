@@ -165,8 +165,8 @@
 
 #tailwind {
     border: 2vw double hsl(155, 30%, 50%);
-    grid-column: 5 / 10;
-    grid-row: 12 / 17;
+    grid-column: 4 / 9;
+    grid-row: 11 / 16;
     -webkit-text-stroke: 1px hsl(155, 30%, 50%);
     transform:scale(.75);
     img {
@@ -254,4 +254,20 @@
     font-size: clamp(.75rem, 2vw, 1.5rem);
     font-family: $groovyFont;
     background-color: hsl(16, 60%, 45%);
+}
+
+#bootstrap {
+    border: 2vw double hsl(263deg 34% 41%);
+    grid-column: 8 / 13;
+    grid-row: 15 / 20;
+    -webkit-text-stroke: 1px hsl(263deg 34% 41%);
+    transform:scale(.75);
+    img {
+        background-image: radial-gradient(circle at center, hsl(263deg 34% 41%), hsl(263deg 34% 41%), transparent);
+    }
+
+    &:hover {
+        transform:scale(1);
+        box-shadow: 0px 0px 300px hsl(263deg 34% 41%);
+    }
 }
