@@ -1,133 +1,61 @@
 @import '../../resources/variables';
 
-@keyframes whiteNoise {
-  0% { background-image: url('../../resources/hi.jpeg');} 
-  25% { background-image: url('../../resources/hi.jpeg');} 
-  26% { background-image: url('../../resources/white-noise-bg1.svg');} 
-  27% { background-image: url('../../resources/white-noise-bg2.svg');} 
-  28% { background-image: url('../../resources/white-noise-bg3.svg');} 
-  29% { background-image: url('../../resources/white-noise-bg4.svg');} 
-  30% { background-image: url('../../resources/iloveyou.jpeg');} 
-  55% { background-image: url('../../resources/iloveyou.jpeg');} 
-  56% { background-image: url('../../resources/white-noise-bg1.svg');} 
-  57% { background-image: url('../../resources/white-noise-bg2.svg');} 
-  58% { background-image: url('../../resources/white-noise-bg3.svg');} 
-  59% { background-image: url('../../resources/white-noise-bg4.svg');} 
-  60% { background-image: url('../../resources/answer.jpeg');} 
-  100% { background-image: url('../../resources/answer.jpeg');}  
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
 
 .welcome-container {
   position: relative;
   margin-top: 5vh;
-  background-image: 
-  linear-gradient(90deg, antiquewhite, rgb(195, 189, 148)),
-  linear-gradient(90deg, #c0ffee, #c0ffee);
-  background-size: 100% 60%, 100% 100%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
-  font-family: $threeDFont, cursive;
-  
-  .waves {
-      position: absolute;
-      width: 100%;
-    }
+  font-family: $threeDFont, serif;
 
   .welcome-header {
     padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 1vw, 2rem);
-    font-size: clamp(1.85rem, 5vw, 4.5rem);
+    font-size: clamp(1.25rem, 5vw, 4rem);
     display: flex;
-    align-items: center;
     justify-content: start;
-    letter-spacing: 5px;
+    z-index: 10;
 
-    .letter {
-      color: transparent;
-      background-image: linear-gradient(
-        180deg,
-        hsl(170, 69%, 22%) 0% 20%, 
-        hsl(170, 69%, 34%) 20% 40%, 
-        hsl(170, 69%, 46%) 40% 60%,
-        hsl(170, 69%, 58%) 60% 80%,
-        hsl(170, 69%, 70%) 80% 100% );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-stroke: 1px black;
-      z-index: 100;
+    .hello {
+      color: white;
+      opacity: 0;
+      animation: fadeIn 700ms ease-in-out 200ms forwards;
     }
 
-    .letter2 {
-      color: transparent;
-      background-image: linear-gradient(
-        0deg,
-        hsl(170, 69%, 22%) 0% 20%, 
-        hsl(170, 69%, 34%) 20% 40%, 
-        hsl(170, 69%, 46%) 40% 60%,
-        hsl(170, 69%, 58%) 60% 80%,
-        hsl(170, 69%, 70%) 80% 100% );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-stroke: 1px black;
-      z-index: 100;
+    .friends {
+      margin-left: 10px;
+      color: hsl(170, 42%, 49%);
+      opacity: 0;
+      animation: fadeIn 1000ms ease-in-out 900ms forwards;
     }
+  }  
+
+  .welcome-body {
+    animation: reveal 2000ms ease 2000ms forwards;
+    padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 1vw, 2rem);
+    font-size: clamp(1.25rem, 3.5vh, 4rem);
+    background: linear-gradient(90deg, goldenrod, rgb(255, 190, 69), orange 50%, #46532c 50% 100%);
+    background-size: 200%;
+    background-position: right;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 
-  .welcome-subheader {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-inline: clamp(1rem, 2vw, 2rem);
-    font-size: clamp(1.5rem, 4vw, 4rem);
-    font-family: $groovyFont;
-    font-weight: 400;
-    color: white;
-    -webkit-text-stroke: 1px black;
-
-    .my-name {
-      color: hsl(170, 69%, 20%);
-      -webkit-text-stroke: 2px white;
-      text-shadow: 
-        1px .3vh 0 hsl(170, 69%, 20%),
-        2px .6vh 0 hsl(170, 69%, 40%),
-        3px .9vh 0 hsl(170, 69%, 50%),
-        4px 1.2vh 0 hsl(170, 69%, 60%),
-        5px 1.5vh 0 hsl(170, 69%, 70%);
-    }
-  }
-
-  .tv-display {
-    margin-top: 3vh;
-    position: relative;
-    @include flexCenter();
-
-    .old-tv-img {
-      width: 90%;
-      z-index: 10;
-    }
-  
-    .tv-tint {
-      color: aquamarine;
-      font-size: clamp(.75rem, 2.75vw, 2.5rem);
-      position: absolute;
-      @include flexCenter();
-      width: 60%;
-      height: 82%;
-      background-image: radial-gradient(circle at center, grey 0% 50%, black 100%);
-      background-size: 65% 80%;
-      background-repeat: no-repeat;
-      background-position: center;
-      filter: grayscale(80%);
-      transition: filter 500ms;
-    }
-
-    .power-on.tv-tint {
-      animation: whiteNoise 10s steps(1) 0s 1 forwards;
-      color: transparent;
-      background-color: grey;
-    }
-  }
-  
-  
 }
 
 

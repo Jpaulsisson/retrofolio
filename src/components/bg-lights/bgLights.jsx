@@ -1,44 +1,9 @@
-import './OldSchool.scss';
-import Projects from './components/projects/projects.component';
-import Welcome from './components/welcome/welcome.component';
-import Skills from './components/skills/skills.component';
-import Contact from './components/contact/contact.component';
-import WavesDown from './resources/layered-waves-top-down.svg';
-import { useEffect } from 'react';
 
-function OldSchool() {
-  useEffect(() => {
-    const sectionHeaders = document.querySelectorAll('.section-header');
+import '../../App.scss';
 
-    if (sectionHeaders) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(
-          (entry) => {
-            entry.target.classList.toggle('on', entry.isIntersecting);
-            if (entry.isIntersecting) observer.unobserve(entry.target);
-          },
-          {
-            threshold: 1,
-          }
-        );
-      });
-
-      sectionHeaders.forEach((header) => {
-        observer.observe(header);
-      });
-    }
-  });
+export default function bgLights({ children }) {
   return (
-    <div className="OldSchool">
-      <Welcome />
-      <div className="about-transition-container">
-        <img className="waves-down" src={WavesDown} alt="groovy waves" />
-        <h2 className="about-header">
-          <span>S</span>kills
-        </h2>
-      </div>
-      <Skills />
-      <div className="projects-transition-container">
+    <div className="bg-lights-container">
         <div className="grid-overlay">
           <div className="grid-cell"></div>
           <div className="grid-cell"></div>
@@ -141,14 +106,7 @@ function OldSchool() {
           <div className="grid-cell"></div>
           <div className="grid-cell"></div>
         </div>
-        <h2 className="projects-header">
-          <span>P</span>rojects
-        </h2>
+        {children}
       </div>
-      <Projects />
-      <Contact />
-    </div>
-  );
+  )
 }
-
-export default OldSchool;

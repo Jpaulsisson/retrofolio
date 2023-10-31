@@ -9,34 +9,42 @@
   100% { border-radius: 15vw 20vw 15vw 20vw; }
 }
 
-@keyframes slideBg {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
+.projects-header {
+    font-family: $threeDFont;
+    color: goldenrod;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../resources/header-blob.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 5vh;
 }
 
 .projects-section-container {
   @include flexCenter();
   flex-direction: column;
-  margin: 5vh auto;
   position: relative;
   border: 3px solid rgba($color: rgb(255, 255, 255), $alpha: .8);
   outline: 2px solid aqua;
   border-radius: 30px;
   background-color: rgba($color: rgb(170, 170, 170), $alpha: 1);
-  width: 90%;
+  width: 100%;
   height: 100%;
+  margin: 0 auto;
   aspect-ratio: 1;
   z-index: 1;
   box-shadow: 0 0 200px white, 0 0 100px black inset;
 
 
+
+
   .projects-wrapper { 
     @include flexCenter();
     position: relative;
+    margin: 0 auto;
     animation: breathe 70s linear 0s infinite alternate forwards;
     width: 85%;
     aspect-ratio: 1;

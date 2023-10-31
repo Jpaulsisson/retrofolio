@@ -82,54 +82,11 @@ img {
 
 .App {
 
-  .about-transition-container {
+  .bg-lights-container {
     position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    background-image: 
-    url('./resources/circles.svg'),
-    url('./resources/tiny-stars-yellow.svg'),
-    url('./resources//tiny-stars-red.svg'),
-    url('./resources/tiny-stars.svg'),
-    url('./resources/tiny-stars-yellow.svg'),
-    url('./resources//tiny-stars-red.svg'),
-    url('./resources/tiny-stars.svg');
-    background-size: 80% 150%, 120% 120%, 500px 250px, 200px 100px, 170% 140%, 180% 130%, 400px 200px;
-    
-    img {
-      min-width: 100%;
-    }
-
-    .about-header {
-      @include flexCenter();
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      font-family: $threeDFont, cursive;
-      font-size: clamp(1rem, 3vw, 3.5rem);
-      background-image: url('./resources/header-blob.svg');
-      background-size: 65% 65%;
-      background-position: center;
-      background-repeat: no-repeat;
-      text-shadow: 2px 2px 15px whitesmoke;
-      
-      span {
-        color: transparent;
-        background-image: linear-gradient(90deg, orangered, orange);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-stroke: 1px black;
-        font-weight: 100;
-      }
-    }
-    
-  }
-
-  .projects-transition-container {
-    position: relative;
+    width: 90%;
     height: 50vh;
-
+  
     .grid-overlay {
       width: 100%;
       height: 100%;
@@ -140,15 +97,15 @@ img {
       justify-items: center;
       grid-template-columns: repeat(10, 1fr);
       grid-template-rows: repeat(10, 1fr);
-      overflow: hidden;
-
+  
+  
       .grid-cell {
         display: inline-block;
         width: 100%;
         aspect-ratio: 1;
         border-radius: 50%;
         background-color: hsla(0, 0%, 100%, 0.35);
-
+  
         &:nth-child(4n) {
           box-shadow: 0 0 5px inset $primaryPink, 0 0 15px  $primaryPink;
           max-width: 12%;
@@ -165,7 +122,7 @@ img {
           box-shadow: 0 0 5px inset $accentNeutral, 0 0 15px inset $accentNeutral;
           max-width: 8%;
         }
-
+  
         @for $i from 1 to 101 {
           &:nth-child(#{$i}) {
             animation: 
@@ -176,33 +133,10 @@ img {
         }
       }
     }
-
-    .projects-header {
-      @include flexCenter();
-      font-family: $threeDFont;
-      font-size: clamp(1rem, 3vw, 3.5rem);
-      width: 100%;
-      height: 60vh;
-      color:#c0ffee;
-      border-top: 1vh double hsl(0, 0%, 35%);
-      background-image: 
-        linear-gradient(90deg, transparent 0% 49%, hsl(0, 0%, 35%) 49% 51%, transparent 51% 100%),
-        radial-gradient(circle at center, hsl(0, 0%, 35%) 0% 30%, transparent 30% 100%);
-      background-size: 100% 40%, 100% 100%;
-      background-position: top, center;
-      background-repeat: no-repeat, no-repeat;
-
-        span {
-          color: transparent;
-          background-image: linear-gradient(60deg, orangered, orange);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-stroke: 1px #c0ffee;
-          font-weight: 400;
-
-        }
-    }
+  
+  
   }
+  
 }
 
 //scroll-bar styles

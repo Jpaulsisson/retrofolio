@@ -1,273 +1,66 @@
 @import '../../resources/variables';
 
+@keyframes rolodex {
+    0% {
+        translate: 0% 0%;
+    }
+
+    100% {
+        translate: 0% -3000%;
+    }
+}
 
 .skills-container {
-    min-height: 40vh;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 1fr);
-    border-top: 15px solid hsl(17, 44%, 16%);
-    background-image: 
-    url('../../resources/circles2.svg'),
-    url('../../resources/circles2.svg'),
-    conic-gradient(
-        antiquewhite 0deg 1deg, 
-        #a99901 1deg 12deg,
-        hsl(345, 42%, 37%) 12deg 19deg,
-        antiquewhite 27deg 28deg,
-        #a99901 50deg 65deg,
-        #c0ffee 87deg 120deg,
-        antiquewhite 127deg 129deg,
-        hsl(17, 44%, 16%) 147deg 189deg,
-        #c0ffee 207deg 232deg,
-        #a99901 255deg 272deg,
-        antiquewhite 279deg 280deg,
-        hsl(345, 42%, 37%) 327deg 332deg,
-        #a99901 340deg 359deg,
-        antiquewhite 359deg 360deg,
-        );
-    background-size: 100% 100%, 50% 25%, 1% 100%;
-    background-repeat: no-repeat, repeat, repeat;
+    width: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    margin-bottom: 100px;
 
-    .skill {
+    .skills-header {
+        font-family: $threeDFont;
+        color: goldenrod;
+        min-height: 135px;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        aspect-ratio: 1;
-        background-color: antiquewhite;
-        border-radius: 50%;
-        transition: all 500ms;
-        background-color: wheat;
-        
-        h3 {
-            font-size: clamp(1.25rem, 2.25vw, 2.5rem);
-            font-family: $groovyFont;
-            color: black;
-        }
-        img {
-            max-height: 50%;
-            border-radius: 50%;
-            aspect-ratio: 1;
-        }
+        background-image: url('../../resources/header-blob.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
-}
 
-#html {
-    position: relative;
-    border: 2vw double hsl(16, 51%, 54%);
-    grid-column: 1 / 5;
-    grid-row: 1 / 5;
-    -webkit-text-stroke: 1px hsl(16, 51%, 54%);
-    transform: scale(.75);
+    .tv-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     img {
-        background-image: radial-gradient(circle at center, hsl(16, 51%, 54%), hsl(16, 51%, 54%), transparent);
-    }
-    
-    &:hover {
-            transform: scale(1);
-            box-shadow: 0px 0px 300px hsl(16, 51%, 54%);
-        }
-}
-//show certified
-#html:hover#html::after {
-    content: 'Certified by Code Academy';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    @include flexCenter();
-    inset: 0;
-    color:antiquewhite;
-    font-size: clamp(.75rem, 2vw, 1.5rem);
-    font-family: $groovyFont;
-    background-color:hsl(16, 51%, 54%);
-}
-
-#css {
-    border: 2vw double hsl(217, 75%, 45%);
-    grid-column: 15 / 20;
-    grid-row: 1 / 6;
-    -webkit-text-stroke: 1px hsl(217, 75%, 45%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(217, 75%, 45%),hsl(217, 75%, 45%), transparent);
+        background: linear-gradient(black, white);
+        background-size: 50% 70%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(217, 75%, 45%);
-    }
-}
-//show certified
-#css:hover#css::after {
-    content: 'Certified by Code Academy';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    @include flexCenter();
-    inset: 0;
-    color:antiquewhite;
-    font-size: clamp(.75rem, 2vw, 1.5rem);
-    font-family: $groovyFont;
-    background-color: hsl(217, 75%, 45%);
-}
-
-#javascript {
-    border: 2vw double hsl(52, 90%, 43%);
-    grid-column: 7 / 13;
-    grid-row: 2 / 8;
-    -webkit-text-stroke: 1px hsl(52, 90%, 43%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(52, 90%, 43%),hsl(52, 90%, 43%), transparent);
+    .skills-list {
+        height: 55%;
+        overflow: hidden;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        translate: -50% -40%;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        font-size: clamp(.5rem, 1.25vh, 2rem);
+        font-family: $gamerFont;
     }
 
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(52, 90%, 43%);
-    }
-}
-//show certified
-#javascript:hover#javascript::after {
-    content: 'Certified by Code Academy';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    @include flexCenter();
-    inset: 0;
-    color:antiquewhite;
-    font-size: clamp(.75rem, 2vw, 1.5rem);
-    font-family: $groovyFont;
-    background-color: hsl(52, 90%, 43%);
-}
-
-#react {
-    border: 2vw double hsl(192, 95%, 68%);
-    grid-column: 11 / 18;
-    grid-row: 7 / 14;
-    -webkit-text-stroke: 1px hsl(192, 95%, 68%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(192, 95%, 68%), hsl(192, 95%, 68%), transparent);
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(192, 95%, 68%);
-    }
-}
-
-#tailwind {
-    border: 2vw double hsl(155, 30%, 50%);
-    grid-column: 4 / 9;
-    grid-row: 11 / 16;
-    -webkit-text-stroke: 1px hsl(155, 30%, 50%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(155, 30%, 50%), hsl(155, 30%, 50%), transparent);
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(155, 30%, 50%);
-    }
-}
-
-#sass {
-    border: 2vw double hsl(330, 60%, 65%);
-    grid-column: 15 / 21;
-    grid-row: 15 / 21;
-    -webkit-text-stroke: 1px hsl(330, 60%, 65%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(330, 60%, 65%), hsl(330, 60%, 65%), transparent);
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(330, 60%, 65%);
-    }
-}
-
-#typescript {
-    border: 2vw double hsl(212, 54%, 37%);
-    grid-column: 2 / 7;
-    grid-row: 6 / 11;
-    -webkit-text-stroke: 1px hsl(212, 54%, 37%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(212, 54%, 37%), hsl(212, 54%, 37%), transparent);
-        width: 50%;
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(212, 54%, 37%);
-    }
-}
-//show certified
-#typescript:hover#typescript::after {
-    content: 'Certified by Code Academy';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    @include flexCenter();
-    inset: 0;
-    color:antiquewhite;
-    font-size: clamp(.75rem, 2vw, 1.5rem);
-    font-family: $groovyFont;
-    background-color: hsl(212, 54%, 37%);
-}
-
-#git {
-    border: 2vw double hsl(16, 60%, 45%);
-    grid-column: 2 / 6;
-    grid-row: 17 / 21;
-    -webkit-text-stroke: 1px hsl(16, 60%, 45%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(16, 60%, 45%),hsl(16, 60%, 45%), transparent);
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(16, 60%, 45%);
-    }
-}
-//show certified
-#git:hover#git::after {
-    content: 'Certified by Colt Steele / Udemy';
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    position: absolute;
-    @include flexCenter();
-    inset: 0;
-    color:antiquewhite;
-    font-size: clamp(.75rem, 2vw, 1.5rem);
-    font-family: $groovyFont;
-    background-color: hsl(16, 60%, 45%);
-}
-
-#bootstrap {
-    border: 2vw double hsl(263deg 34% 41%);
-    grid-column: 8 / 13;
-    grid-row: 15 / 20;
-    -webkit-text-stroke: 1px hsl(263deg 34% 41%);
-    transform:scale(.75);
-    img {
-        background-image: radial-gradient(circle at center, hsl(263deg 34% 41%), hsl(263deg 34% 41%), transparent);
-    }
-
-    &:hover {
-        transform:scale(1);
-        box-shadow: 0px 0px 300px hsl(263deg 34% 41%);
+    .skill {
+        translate: 0% -0%;
+        animation: rolodex 20s linear alternate infinite;
+        filter: brightness(90%);
     }
 }

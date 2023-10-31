@@ -4,7 +4,7 @@ import '../projects/projects.styles.scss';
 
 function Projects() {
   const { projects } = useContext(DataContext);
-  const [currentProject, setCurrentProject] = useState(2);
+  const [currentProject, setCurrentProject] = useState(0);
 
   const currentShowing = projects[currentProject];
 
@@ -23,6 +23,8 @@ function Projects() {
   }
 
   return (
+    <>
+    <h2 className='projects-header'>Projects</h2>
     <div id="projects" className="projects-section-container">
       <div className="projects-wrapper">
         <a
@@ -34,19 +36,13 @@ function Projects() {
         >
           <h2>{currentShowing.name}</h2>
           <img className='project-img' src={currentShowing.img} alt={currentShowing.name} />
-              <div className='project-tags-container'>
-                {currentShowing.tags.map((tag, index) => {
-                  return (
-                    <img className='project-tag' key={index} src={tag} alt='programming language icons' />
-                  )
-                })} 
-              </div>
         </a>
         <button className='prev-button' onClick={() => goToPrev(projects, currentProject)}>&#10170;</button>
         <button className='next-button' onClick={() => goToNext(projects, currentProject)}>&#10170;</button>  
       </div>
       <a className='repo-link-button' href={currentShowing.repo} target='_blank' rel='noreferrer'>See the code</a>
     </div>
+    </>
   );
 }
 
