@@ -86,10 +86,11 @@ img {
     position: relative;
     width: 90%;
     height: 50vh;
-  
+
     .grid-overlay {
-      width: 100%;
+      width: 90%;
       height: 100%;
+      margin: 0 auto;
       position: absolute;
       inset: 0;
       display: grid;
